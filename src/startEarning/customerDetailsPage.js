@@ -41,19 +41,6 @@ class CustomerDetailsPage extends React.Component {
     };
   }
 
-  // static navigationOptions = ({navigation, screenProps}) => ({
-  //   title: 'My Lead',
-  //   // headerRight: <Button color={screenProps.tintColor} {...} />,
-  // });
-
-  // static navigationOptions = {
-  //   title: 'Great',
-  // };
-
-  static navigationOptions = {
-    title: 'black',
-  };
-
   componentDidMount() {
     console.log('this.props.formDefenition ....', this.props.formDefenition);
     this.parseFormDefenition();
@@ -498,11 +485,11 @@ class CustomerDetailsPage extends React.Component {
             <View style={styles.scrollContainer}>
               {/* <View style={BaseStyles.emptyHView} /> */}
               <View style={styles.topContainer}>
-                <View stye={styles.productNameRow}>
+                {/* <View stye={styles.productNameRow}>
                   <Text style={styles.productName}>
                     {this.props.formInfo.ProductName}
                   </Text>
-                </View>
+                </View> */}
                 <View style={styles.userInfo}>
                   <Text style={styles.userInfoTxt}>
                     {this.props.formInfo.FormDesc}

@@ -65,7 +65,9 @@ class ProductsListPage extends React.Component {
   onGetProductsFormDefenitionDetailsSuccess = () => {
     console.log('onGetProductsFormDefenitionDetailsSuccess success');
     this.setState({isLoading: false}, () =>
-      this.props.navigation.navigate('CustomerDetailsPage'),
+      this.props.navigation.navigate('CustomerDetailsPage', {
+        title: this.props.formInfo.ProductName,
+      }),
     );
   };
 
@@ -204,6 +206,7 @@ const mapStateToProps = state => {
   console.log('state from products list page ... ', state);
   return {
     productsList: state.products.productsList,
+    formInfo: state.products.formInfo[0],
   };
 };
 const mapDispatchToProps = dispatch => ({

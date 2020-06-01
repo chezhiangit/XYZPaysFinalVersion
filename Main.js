@@ -457,20 +457,21 @@ class Main extends React.Component {
         <Drawer.Screen
           name="CustomerDetailsPage"
           component={CustomerDetailsPage}
-          options={{
-            title: I18n.t('LeadTaskEntry.headerTitle'),
-            headerStyle: {
-              backgroundColor: Colors.primaryAppColor,
-            },
-            headerTintColor: Colors.primaryFontColor,
-            headerTitleStyle: {
-              fontSize: FontsSize.headerName,
-              fontWeight: FontsWeight.header,
-              color: Colors.primaryFontColor,
-              fontFamily: fontFamily.primaryFontFamily,
-            },
-            // headerBackTitle: 'Trending Products',
-          }}
+          options={({route}) => ({title: route.params.title})}
+          // options={{
+          //   title: I18n.t('LeadTaskEntry.headerTitle'),
+          //   headerStyle: {
+          //     backgroundColor: Colors.primaryAppColor,
+          //   },
+          //   headerTintColor: Colors.primaryFontColor,
+          //   headerTitleStyle: {
+          //     fontSize: FontsSize.headerName,
+          //     fontWeight: FontsWeight.header,
+          //     color: Colors.primaryFontColor,
+          //     fontFamily: fontFamily.primaryFontFamily,
+          //   },
+          //   // headerBackTitle: 'Trending Products',
+          // }}
         />
         <Stack.Screen
           name="TaskTransactionList"
