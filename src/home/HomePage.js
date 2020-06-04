@@ -261,8 +261,15 @@ class HomePage extends React.Component {
                 onSubmit={this.onPressTaskButton}
                 btnName={taskBtnName}
               /> */}
-              <View style={styles.taskBtn}>
-                <Text style={styles.taskText}>{taskBtnName}</Text>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}>
+                <View style={styles.taskBtn}>
+                  <Text style={styles.taskText}>{taskBtnName}</Text>
+                </View>
               </View>
               <View
                 style={[BaseStyles.emptyHView, {height: heightAdapter(30)}]}
@@ -298,7 +305,7 @@ class HomePage extends React.Component {
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <PaymentStatusComponent
               onSubmit={this.onPressApprovedButton}
-              btnName={this.props.dashboardData.totalCommissionReceivable}
+              btnName={this.props.dashboardData.pendingPayout}
               btnStyle={styles.approveBtnStyle}
               textStyle={styles.amountText}
               paymentStatus={I18n.t('homePage.paymentApproved')}
@@ -331,7 +338,7 @@ class HomePage extends React.Component {
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
             <PaymentStatusComponent
               onSubmit={this.onPressPendingButton}
-              btnName={this.props.dashboardData.pendingPayout}
+              btnName={this.props.dashboardData.totalCommissionReceivable}
               btnStyle={styles.pendingBtnStyle}
               textStyle={styles.amountText}
               paymentStatus={I18n.t('homePage.paymentPending')}

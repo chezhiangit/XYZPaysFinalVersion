@@ -75,17 +75,17 @@ class UserRegistration extends React.Component {
   onSubmitRegistration = () => {
     try {
       if (this.state.FirstName.length === 0) {
-        throw {msg: 'Pls enter Frist Name'};
+        throw {msg: 'Please enter Frist Name'};
       } else if (this.state.LastName.length === 0) {
-        throw {msg: 'Pls enter Last Name'};
+        throw {msg: 'Please enter Last Name'};
       } else if (this.state.Mobile.length === 0) {
-        throw {msg: 'Pls enter Mobile Number'};
+        throw {msg: 'Please enter Mobile Number'};
       } else if (this.state.Email.length === 0) {
-        throw {msg: 'Pls enter Login Email'};
+        throw {msg: 'Please enter Login Email'};
       } else if (this.state.Password.length === 0) {
-        throw {msg: 'Pls enter Password'};
+        throw {msg: 'Please enter Password'};
       } else if (this.state.ConfirmPassword.length === 0) {
-        throw {msg: 'Pls enter Confirm Password'};
+        throw {msg: 'Please enter Confirm Password'};
       } else if (this.state.Password !== this.state.ConfirmPassword) {
         throw {msg: 'Password and Confirm Password mismatch.'};
       }

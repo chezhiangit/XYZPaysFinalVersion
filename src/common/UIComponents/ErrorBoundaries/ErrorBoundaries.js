@@ -13,7 +13,7 @@ class ErrorBoundary extends React.Component {
     this.state = {
       hasError: false,
       showDlg: false,
-      dlgMsg: 'Somthingwent wrong. Pls try again.',
+      dlgMsg: 'Somthingwent wrong. Please try again.',
     };
   }
 

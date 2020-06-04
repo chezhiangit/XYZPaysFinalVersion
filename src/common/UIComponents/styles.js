@@ -80,14 +80,15 @@ export default StyleSheet.create({
   },
   captionText: {
     position: 'absolute',
-    top: widthAdapter(-25),
+    top: widthAdapter(-27),
     left: widthAdapter(30),
     height: widthAdapter(50),
     fontSize: fontscale(12),
     backgroundColor: Colors.white,
     padding: widthAdapter(10),
     fontFamily: fontFamily.primaryFontFamily,
-    color: '#22caff',
+    // color: '#22caff',
+    // color: 'Black',
   },
   roundBtn: {
     height: widthAdapter(150),

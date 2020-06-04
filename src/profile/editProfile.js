@@ -181,7 +181,7 @@ class EditProfilePage extends React.Component {
   onSaveProfileInfoSuccess = () => {
     this.setState({isLoading: false, saveProfileInfoServiceDone: false}, () =>
       // this.props.navigation.goBack(),
-      this.props.navigation.navigate('Home'),
+      this.props.navigation.navigate('ProfilePage'),
     );
   };
 

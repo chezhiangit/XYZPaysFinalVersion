@@ -239,6 +239,8 @@ class DrawerComponent extends Component {
           onCancel={this.onCancel}
           onOK={this.onConfirm}
           dlgMsg={this.state.dlgMsg}
+          leftButtonText={I18n.t('hamburgerMenu.NoBtnTxt')}
+          rightButtonText={I18n.t('hamburgerMenu.YesBtnTxt')}
         />
         {/* <View style={styles.footerContainer}>
           <Text>This is my fixed footer</Text>

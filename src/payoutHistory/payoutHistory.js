@@ -51,6 +51,7 @@ class PayoutHistory extends React.Component {
       segmentBorder: 0,
       availableAmount: 0,
       notEnoughAmountTxt: I18n.t('payoutHistory.notEnoughAmountTxt'),
+      updatePaypalEmailInfo: I18n.t('payoutHistory.updatePaypalEmailInfo'),
       showDlg: false,
       dlgMsg: '',
       isLoading: false,
@@ -365,7 +366,7 @@ class PayoutHistory extends React.Component {
           <View style={[BaseStyles.emptyHView, {height: heightAdapter(20)}]} />
           <View style={styles.availableAmount}>
             <Text style={styles.availableAmountTxt}>
-              {`$ ${this.props.payoutDetails.TotalPayoutAmount}`}
+              {`$ ${this.props.payoutDetails.TotalPayoutAmount ?? 0}`}
             </Text>
             {Number(this.props.payoutDetails.TotalPayoutAmount) === 0 && (
               <>
@@ -384,25 +385,42 @@ class PayoutHistory extends React.Component {
           </View>
           {Number(this.props.payoutDetails.TotalPayoutAmount) > 0 && (
             <>
-              <View
-                style={[BaseStyles.emptyHView, {height: heightAdapter(70)}]}
-              />
-              <PrimaryButton
-                btnStyle={styles.transferBtn}
-                onSubmit={this.onTransferMoney}
-                btnName={I18n.t('payoutHistory.transferBtnName')}
-              />
               {/* <View
                 style={[BaseStyles.emptyHView, {height: heightAdapter(70)}]}
               /> */}
-              <View style={styles.logedInUserInfo}>
-                <Text style={styles.logedInUserHelloText}>
-                  {I18n.t('payoutHistory.emailId')}
-                </Text>
-                <Text style={styles.logedInUserHelloText}>
-                  {this.props.payoutDetails.PayPalEmail}
-                </Text>
-              </View>
+              {/* <PrimaryButton
+                btnStyle={styles.transferBtn}
+                onSubmit={this.onTransferMoney}
+                btnName={I18n.t('payoutHistory.transferBtnName')}
+              /> */}
+              {this.props.payoutDetails.PayPalEmail &&
+              this.props.payoutDetails.PayPalEmail.length > 0 ? (
+                <>
+                  <View
+                    style={[BaseStyles.emptyHView, {height: heightAdapter(70)}]}
+                  />
+                  <PrimaryButton
+                    btnStyle={styles.transferBtn}
+                    onSubmit={this.onTransferMoney}
+                    btnName={I18n.t('payoutHistory.transferBtnName')}
+                  />
+                  <View style={styles.logedInUserInfo}>
+                    <Text style={styles.logedInUserHelloText}>
+                      {I18n.t('payoutHistory.emailId')}
+                    </Text>
+                    <Text style={styles.logedInUserHelloText}>
+                      {this.props.payoutDetails.PayPalEmail}
+                    </Text>
+                  </View>
+                </>
+              ) : (
+                <TextInput
+                  style={styles.notEnoughAmountTxt}
+                  value={this.state.updatePaypalEmailInfo}
+                  multiline
+                  editable={false}
+                />
+              )}
             </>
           )}
           <View style={[BaseStyles.emptyHView, {height: heightAdapter(70)}]} />

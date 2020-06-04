@@ -39,12 +39,12 @@ function* userLogin(action) {
       action.onErrorcallback(response.Message);
     } else {
       action.onErrorcallback(
-        'Unable to able complete your request. Pls try again.',
+        'Unable to able complete your request. Please try again.',
       );
     }
   } catch (error) {
     action.onErrorcallback(
-      'Unable to able complete your request. Pls try again.',
+      'Unable to able complete your request. Please try again.',
     );
   }
 }
@@ -64,12 +64,12 @@ function* registerUser(action) {
       action.onErrorcallback(response.Message);
     } else {
       action.onErrorcallback(
-        'Unable to able complete your request. Pls try again.',
+        'Unable to able complete your request. Please try again.',
       );
     }
   } catch (error) {
     action.onErrorcallback(
-      'Unable to able complete your request. Pls try again.',
+      'Unable to able complete your request. Please try again.',
     );
   }
 }
@@ -89,10 +89,10 @@ function* getProviders(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 

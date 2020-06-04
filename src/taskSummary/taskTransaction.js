@@ -66,7 +66,7 @@ class TaskTransactionList extends React.Component {
   };
 
   onStartLead = item => {
-    this.setState({isLoading: true});
+    this.setState({isLoading: true, selectedLeadKey: item.LeadKey});
     this.props.getProductsFormDefenitionDetailsData(
       item.FormKey,
       item.LeadKey,
@@ -80,7 +80,9 @@ class TaskTransactionList extends React.Component {
   onGetProductsFormDefenitionDetailsSuccess = () => {
     console.log('onGetProductsFormDefenitionDetailsSuccess success');
     this.setState({isLoading: false}, () =>
-      this.props.navigation.navigate('LeadTransactionDetails'),
+      this.props.navigation.navigate('LeadTransactionDetails', {
+        LeadKey: this.state.selectedLeadKey,
+      }),
     );
   };
 
@@ -150,6 +152,41 @@ class TaskTransactionList extends React.Component {
         {/* <ScrollView showsVerticalScrollIndicator={false}> */}
         <View style={styles.scrollContainer}>
           <Dropdown
+            label={'Select'}
+            value={this.state.selecteLead}
+            labelFontSize={fontscale(16)}
+            // labelTextStyle={{fontSize: fontscale(16), color: 'red'}}
+            data={this.props.taskListFilter?.map(this.parseFilterItems)}
+            // inputContainerStyle={{width: widthAdapter(700)}}
+            inputContainerStyle={{
+              borderBottomColor: 'transparent',
+              justifyContent: 'flex-end',
+              height: heightAdapter(100),
+              // borderColor: 'blue',
+              // borderWidth: 1,
+            }}
+            containerStyle={{
+              justifyContent: 'center',
+              borderColor: '#666',
+              borderWidth: 1,
+              marginBottom: heightAdapter(20),
+              marginTop: heightAdapter(20),
+            }}
+            baseColor="black"
+            // itemPadding={{
+            //   height: heightAdapter(30),
+            // }}
+            dropdownOffset={{
+              top:
+                this.state.selecteLead.length > 0
+                  ? heightAdapter(-10)
+                  : heightAdapter(30),
+            }}
+            onChangeText={(value, selectedIndex, data) =>
+              this.onDropDownChanges(value, selectedIndex, data)
+            }
+          />
+          {/* <Dropdown
             value={this.state.selecteLead}
             label={'Select'}
             data={this.props.taskListFilter?.map(this.parseFilterItems)}
@@ -191,7 +228,7 @@ class TaskTransactionList extends React.Component {
             onChangeText={(value, selectedIndex, data) =>
               this.onDropDownChanges(value, selectedIndex, data)
             }
-          />
+          /> */}
           <View style={styles.addBtnRow}>
             <View style={styles.addView}>
               <View

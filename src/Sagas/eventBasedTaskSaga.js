@@ -53,10 +53,10 @@ function* getProductsList(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -98,10 +98,10 @@ function* getProductsFormDefenitionDetails(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -130,10 +130,10 @@ function* postCustomerDetails(action) {
       console.log(' saga postTaskEntry failed message....', response[0].Message);
       action.onErrorcallback(response[0].Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -158,10 +158,10 @@ function* getEventBasedTaskSummary(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -187,10 +187,10 @@ function* loadLastFiveTransactions(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -220,10 +220,10 @@ function* getEventBasedTaskList(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -258,10 +258,10 @@ function* getFilterForEventBasedTaskList(action) {
     } else if (response === null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -287,10 +287,10 @@ function* getTxnDetail(action) {
     } else if (response === null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -316,10 +316,10 @@ function* getTxnHistory(action) {
     } else if (response === null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 

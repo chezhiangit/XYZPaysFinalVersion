@@ -11,6 +11,7 @@ export default {
     loginBtnName: 'Sign in',
     signUpNow: 'Sign up now',
     forgotPwd: 'Forgot your password?',
+    errorMsg: 'User Name or Password can not be empty.',
   },
   landingPage: {
     hi: 'Hi, ',
@@ -148,7 +149,7 @@ export default {
     firstName: 'First Name',
     lastName: 'Last Name',
     mobileNumber: 'Mobile Number',
-    email: 'Login Email',
+    email: 'Paypal Email',
     address: 'Address',
     state: 'State',
     city: 'City',
@@ -195,7 +196,7 @@ export default {
   },
   payoutHistory: {
     headerTitle: 'Payout History',
-    userInfo: 'Transfer Money & View Payout History',
+    userInfo: 'Transfer Money & Payout History',
     transferBtnName: 'Transfer to you Paypal Account',
     emailId: 'Your Paypal email Id: ',
     payoutStatus: 'Payout Status:',
@@ -204,6 +205,7 @@ export default {
     sku: 'SKU:',
     txnMessage: 'Txn Message:',
     totalAmount: 'Total Amount:',
+    updatePaypalEmailInfo: 'Pleas update your paypal email ID.',
   },
   faq: {
     headerTitle: 'FAQ',
@@ -231,6 +233,8 @@ export default {
     approved: 'Approved',
     pending: 'Pending',
     denied: 'Denied',
+    NoBtnTxt: 'No',
+    YesBtnTxt: 'Yes',
   },
   productDetails: {
     headerTitle: 'Product Details',
@@ -267,7 +271,7 @@ export default {
     galleryBtnName: 'Choose from photos',
     cancelBtnName: 'Cancel',
     logoutMessage: 'Do you want to logout from Application?',
-    errorMsg: 'Could not complete your request. Pls trye again.',
+    errorMsg: 'Could not complete your request. Please trye again.',
   },
   productsList: {
     earningBtnName: 'START EARNING',

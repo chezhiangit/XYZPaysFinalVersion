@@ -35,16 +35,16 @@ class ReferAndEarn extends React.Component {
     // this.props.navigation.goBack();
 
     if (this.state.name.trimLeft().trimRight() === '') {
-      this.setState({showDlg: true, dlgMsg: 'Pls enter valid Name'});
+      this.setState({showDlg: true, dlgMsg: 'Please enter valid Name'});
       return;
     }
     if (this.state.email.trimLeft().trimRight() === '') {
-      this.setState({showDlg: true, dlgMsg: 'Pls enter valid Email'});
+      this.setState({showDlg: true, dlgMsg: 'Please enter valid Email'});
       return;
     }
 
     if (this.state.mobileNumber.trimLeft().trimRight() === '') {
-      this.setState({showDlg: true, dlgMsg: 'Pls enter valid Mobile Number'});
+      this.setState({showDlg: true, dlgMsg: 'Please enter valid Mobile Number'});
       return;
     }
 

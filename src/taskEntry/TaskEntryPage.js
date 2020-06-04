@@ -80,7 +80,7 @@ class TaskEntryPage extends React.Component {
       this.state.components.forEach(item => {
         if (item.ControlType === 'text' || item.ControlType === 'textarea') {
           if (item.ControlReq === true && item.inputValue.length === 0) {
-            throw {msg: 'Pls enter ' + item.ControlLabel};
+            throw {msg: 'Please enter ' + item.ControlLabel};
           }
           const textObj = {
             ControlColumn: item.ControlColumn,
@@ -90,17 +90,20 @@ class TaskEntryPage extends React.Component {
         } else if (item.ControlType === 'checkbox') {
           let isFilled = false;
           const checkboxObj = {};
+          checkboxObj.ControlColumn = item.ControlColumn;
+          checkboxObj.ControlValue = '';
           item.checkBoxGroup.forEach(el => {
             if (el.status) {
               isFilled = true;
-              checkboxObj.ControlColumn = item.ControlColumn;
-              checkboxObj.ControlValue = el.value;
-              payload.push(checkboxObj);
+              // checkboxObj.ControlColumn = item.ControlColumn;
+              checkboxObj.ControlValue = checkboxObj.ControlValue + el.value + ',';
+              // payload.push(checkboxObj);
             }
           });
           if (item.ControlReq === true && isFilled === false) {
-            throw {msg: 'Pls select ' + item.ControlLabel};
+            throw {msg: 'Please select ' + item.ControlLabel};
           }
+          payload.push(checkboxObj);
         } else if (item.ControlType === 'radio') {
           let isFilled = false;
           const selectObj = {};
@@ -113,7 +116,7 @@ class TaskEntryPage extends React.Component {
             }
           });
           if (item.ControlReq === true && isFilled === false) {
-            throw {msg: 'Pls select ' + item.ControlLabel};
+            throw {msg: 'Please select ' + item.ControlLabel};
           }
         } else if (item.ControlType === 'select') {
           const selectObj = {};
@@ -123,7 +126,7 @@ class TaskEntryPage extends React.Component {
             (item.selectedValue === undefined ||
               item.selectedValue?.length === 0)
           ) {
-            throw {msg: 'Pls select ' + item.ControlLabel};
+            throw {msg: 'Please select ' + item.ControlLabel};
           }
           selectObj.ControlColumn = item.ControlColumn;
           selectObj.ControlValue = item.selectedValue;
@@ -316,9 +319,7 @@ class TaskEntryPage extends React.Component {
               }}>
               <Text style={{fontSize: fontscale(16)}}>{item.ControlLabel}</Text>
               {item.ControlReq && (
-                <Text style={{fontSize: fontscale(12)}}>
-                  {'\u2B51'}
-                </Text>
+                <Text style={{fontSize: fontscale(12)}}>{'\u2B51'}</Text>
               )}
             </View>
             <TextInputComponent
@@ -352,9 +353,7 @@ class TaskEntryPage extends React.Component {
               }}>
               <Text style={{fontSize: fontscale(16)}}>{item.ControlLabel}</Text>
               {item.ControlReq && (
-                <Text style={{fontSize: fontscale(12)}}>
-                  {'\u2B51'}
-                </Text>
+                <Text style={{fontSize: fontscale(12)}}>{'\u2B51'}</Text>
               )}
             </View>
             <View
@@ -420,46 +419,30 @@ class TaskEntryPage extends React.Component {
               labelFontSize={fontscale(16)}
               // labelTextStyle={{fontSize: fontscale(16), color: 'red'}}
               data={item.dropDownGroup}
-              inputContainerStyle={{width: widthAdapter(700)}}
-              dropdownOffset={{
-                top: heightAdapter(10),
-                // borderWidth: 1,
-                width: widthAdapter(700),
-              }}
-              // dropdownMargins={{
-              //   width: widthAdapter(300),
-              //   height: heightAdapter(100),
-              // }}
-              itemTextStyle={
-                {
-                  // borderColor: 'green',
-                  // borderWidth: 1,
-                }
-              }
-              pickerStyle={{
-                flexDirection: 'row',
+              // inputContainerStyle={{width: widthAdapter(700)}}
+              inputContainerStyle={{
+                borderBottomColor: 'transparent',
+                justifyContent: 'flex-end',
+                height: heightAdapter(100),
                 // borderColor: 'blue',
                 // borderWidth: 1,
-                // height: heightAdapter(100),
-                // width: widthAdapter(300),
               }}
-              overlayStyle={
-                {
-                  // flexDirection: 'row',
-                  // borderColor: 'blue',
-                  // borderWidth: 1,
-                  // height: heightAdapter(100),
-                  // width: '100%',
-                }
-              }
-              containerStyle={
-                {
-                  // flexDirection: 'row',
-                  // borderColor: 'red',
-                  // borderWidth: 1,
-                  // height: heightAdapter(100),
-                }
-              }
+              containerStyle={{
+                justifyContent: 'center',
+                borderColor: '#666',
+                borderWidth: 1,
+                marginBottom: heightAdapter(20),
+              }}
+              baseColor="black"
+              // itemPadding={{
+              //   height: heightAdapter(30),
+              // }}
+              dropdownOffset={{
+                top:
+                  this.state.components[index].selecteIndex >= 0
+                    ? heightAdapter(-10)
+                    : heightAdapter(30),
+              }}
               onChangeText={(value, selectedIndex, data) =>
                 this.onDropDownChanges(value, selectedIndex, data, index)
               }

@@ -55,7 +55,7 @@ class ProductsListPage extends React.Component {
     this.setState({isLoading: true});
     this.props.getProductsFormDefenitionDetailsData(
       FormKey,
-      LeadKey,
+      '',
       'ProductsList',
       this.onGetProductsFormDefenitionDetailsSuccess,
       this.onGetProductsFormDefenitionDetailsFailed,

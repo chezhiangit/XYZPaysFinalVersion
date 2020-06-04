@@ -22,6 +22,7 @@ import WarningDialog from '../common/UIComponents/warningDialog';
 import {
   postCustomerDetails,
   getEventBasedTaskSummary,
+  getEventBasedTaskList,
 } from '../AppStore/eventBasedTaskActions';
 
 class CustomerDetailsPage extends React.Component {
@@ -127,7 +128,8 @@ class CustomerDetailsPage extends React.Component {
       this.props.postCustomerDetails(
         payload,
         this.props.stepInfo.FormKey,
-        this.props.stepInfo.ProductKey,
+        // this.props.stepInfo.ProductKey,
+        '',
         this.props.stepInfo.StepKey,
         this.onPostEntrySuccess,
         this.onPostEntryFailed,
@@ -161,9 +163,32 @@ class CustomerDetailsPage extends React.Component {
 
   onConfirm = () => {
     if (this.state.postEntry === true) {
-      this.props.navigation.goBack();
+      // this.props.navigation.goBack();
+      this.setState({isLoading: true});
+      this.props.getEventBasedTaskList(
+        this.props.stepInfo.FormKey,
+        this.props.stepInfo.StepKey,
+        this.onGetEventBasedTaskListSuccess,
+        this.onGetEventBasedTaskListFailed,
+      );
     }
     this.setState({showDlg: false});
+  };
+
+  onGetEventBasedTaskListSuccess = () => {
+    this.setState({isLoading: false, isTaskList: true});
+    // this.state.isFilter &&
+    this.props.navigation.navigate('TaskTransactionList', {
+      selecteLead: this.props.stepInfo.StepName,
+    });
+  };
+
+  onGetEventBasedTaskListFailed = errorMsg => {
+    this.setState({
+      isLoading: false,
+      showDlg: true,
+      dlgMsg: errorMsg,
+    });
   };
 
   onTextChange = (text, index) => {
@@ -398,6 +423,41 @@ class CustomerDetailsPage extends React.Component {
               label={
                 item.ControlLabel + (item.ControlReq === false ? '' : '\u2B51')
               }
+              labelFontSize={fontscale(16)}
+              // labelTextStyle={{fontSize: fontscale(16), color: 'red'}}
+              data={item.dropDownGroup}
+              // inputContainerStyle={{width: widthAdapter(700)}}
+              inputContainerStyle={{
+                borderBottomColor: 'transparent',
+                justifyContent: 'flex-end',
+                height: heightAdapter(100),
+                // borderColor: 'blue',
+                // borderWidth: 1,
+              }}
+              containerStyle={{
+                justifyContent: 'center',
+                borderColor: '#666',
+                borderWidth: 1,
+                marginBottom: heightAdapter(20),
+              }}
+              baseColor="black"
+              // itemPadding={{
+              //   height: heightAdapter(30),
+              // }}
+              dropdownOffset={{
+                top:
+                  this.state.components[index].selecteIndex >= 0
+                    ? heightAdapter(-10)
+                    : heightAdapter(30),
+              }}
+              onChangeText={(value, selectedIndex, data) =>
+                this.onDropDownChanges(value, selectedIndex, data, index)
+              }
+            />
+            {/* <Dropdown
+              label={
+                item.ControlLabel + (item.ControlReq === false ? '' : '\u2B51')
+              }
               data={item.dropDownGroup}
               inputContainerStyle={{width: widthAdapter(700)}}
               dropdownOffset={{
@@ -438,7 +498,7 @@ class CustomerDetailsPage extends React.Component {
               onChangeText={(value, selectedIndex, data) =>
                 this.onDropDownChanges(value, selectedIndex, data, index)
               }
-            />
+            /> */}
 
             {/* </View> */}
           </View>
@@ -485,11 +545,11 @@ class CustomerDetailsPage extends React.Component {
             <View style={styles.scrollContainer}>
               {/* <View style={BaseStyles.emptyHView} /> */}
               <View style={styles.topContainer}>
-                {/* <View stye={styles.productNameRow}>
+                <View stye={styles.productNameRow}>
                   <Text style={styles.productName}>
-                    {this.props.formInfo.ProductName}
+                    {this.props.stepInfo.StepName}
                   </Text>
-                </View> */}
+                </View>
                 <View style={styles.userInfo}>
                   <Text style={styles.userInfoTxt}>
                     {this.props.formInfo.FormDesc}
@@ -577,6 +637,20 @@ const mapDispatchToProps = dispatch => ({
         payload,
         FormKey,
         LeadKey,
+        StepKey,
+        onSuccesscallback,
+        onErrocallback,
+      ),
+    ),
+  getEventBasedTaskList: (
+    FormKey,
+    StepKey,
+    onSuccesscallback,
+    onErrocallback,
+  ) =>
+    dispatch(
+      getEventBasedTaskList(
+        FormKey,
         StepKey,
         onSuccesscallback,
         onErrocallback,

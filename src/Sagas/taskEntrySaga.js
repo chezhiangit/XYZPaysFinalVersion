@@ -57,10 +57,10 @@ function* getProductDetails(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -88,10 +88,10 @@ function* getFormDefenitionDetails(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -118,10 +118,10 @@ function* postTaskEntry(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 

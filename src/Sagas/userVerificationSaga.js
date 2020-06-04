@@ -42,10 +42,10 @@ function* getUserMobileDetail(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -65,10 +65,10 @@ function* sendMobileVerificationCode(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -91,10 +91,10 @@ function* verifiMobileVerificationCode(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -114,10 +114,10 @@ function* getUserEmailDetail(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -140,10 +140,10 @@ function* sendEmailVerificationCode(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -168,10 +168,10 @@ function* verifiEmailVerificationCode(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 

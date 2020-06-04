@@ -78,7 +78,7 @@ class LeadTransactionDetails extends React.Component {
             }
           });
           if (item.ControlReq === true && isFilled === false) {
-            throw {msg: 'Pls select ' + item.ControlLabel};
+            throw {msg: 'Please select ' + item.ControlLabel};
           }
         } else if (item.ControlType === 'radio') {
           let isFilled = false;
@@ -92,7 +92,7 @@ class LeadTransactionDetails extends React.Component {
             }
           });
           if (item.ControlReq === true && isFilled === false) {
-            throw {msg: 'Pls select ' + item.ControlLabel};
+            throw {msg: 'Please select ' + item.ControlLabel};
           }
         } else if (item.ControlType === 'select') {
           const selectObj = {};
@@ -102,7 +102,7 @@ class LeadTransactionDetails extends React.Component {
             (item.selectedValue === undefined ||
               item.selectedValue?.length === 0)
           ) {
-            throw {msg: 'Pls select ' + item.ControlLabel};
+            throw {msg: 'Please select ' + item.ControlLabel};
           }
           selectObj.ControlColumn = item.ControlColumn;
           selectObj.ControlValue = item.selectedValue;
@@ -126,7 +126,8 @@ class LeadTransactionDetails extends React.Component {
       this.props.postCustomerDetails(
         payload,
         this.props.stepInfo.FormKey,
-        this.props.stepInfo.ProductKey,
+        // this.props.stepInfo.ProductKey,
+        this.props.route.params?.LeadKey,
         this.props.stepInfo.StepKey,
         this.onPostEntrySuccess,
         this.onPostEntryFailed,
@@ -395,6 +396,41 @@ class LeadTransactionDetails extends React.Component {
               label={
                 item.ControlLabel + (item.ControlReq === false ? '' : '\u2B51')
               }
+              labelFontSize={fontscale(16)}
+              // labelTextStyle={{fontSize: fontscale(16), color: 'red'}}
+              data={item.dropDownGroup}
+              // inputContainerStyle={{width: widthAdapter(700)}}
+              inputContainerStyle={{
+                borderBottomColor: 'transparent',
+                justifyContent: 'flex-end',
+                height: heightAdapter(100),
+                // borderColor: 'blue',
+                // borderWidth: 1,
+              }}
+              containerStyle={{
+                justifyContent: 'center',
+                borderColor: '#666',
+                borderWidth: 1,
+                marginBottom: heightAdapter(20),
+              }}
+              baseColor="black"
+              // itemPadding={{
+              //   height: heightAdapter(30),
+              // }}
+              dropdownOffset={{
+                top:
+                  this.state.components[index].selecteIndex >= 0
+                    ? heightAdapter(-10)
+                    : heightAdapter(30),
+              }}
+              onChangeText={(value, selectedIndex, data) =>
+                this.onDropDownChanges(value, selectedIndex, data, index)
+              }
+            />
+            {/* <Dropdown
+              label={
+                item.ControlLabel + (item.ControlReq === false ? '' : '\u2B51')
+              }
               data={item.dropDownGroup}
               inputContainerStyle={{width: widthAdapter(700)}}
               dropdownOffset={{
@@ -435,7 +471,7 @@ class LeadTransactionDetails extends React.Component {
               onChangeText={(value, selectedIndex, data) =>
                 this.onDropDownChanges(value, selectedIndex, data, index)
               }
-            />
+            /> */}
 
             {/* </View> */}
           </View>

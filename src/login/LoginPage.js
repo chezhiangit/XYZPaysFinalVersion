@@ -32,7 +32,7 @@ class LoginPage extends React.Component {
     if (this.state.userName === '' || this.state.password === '') {
       this.setState({
         showDlg: true,
-        dlgMsg: 'User Name or Password can not be empty.',
+        dlgMsg: I18n.t('login.errorMsg'),
       });
       return;
     }

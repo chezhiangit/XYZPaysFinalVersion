@@ -34,10 +34,10 @@ function* verifyUserEmail(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -65,10 +65,10 @@ function* sendMobileVerificationCode(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -93,10 +93,10 @@ function* verifiMobileVerificationCode(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
@@ -114,10 +114,10 @@ function* changePassword(action) {
     } else if (response !== null) {
       action.onErrorcallback(response.Message);
     } else {
-      action.onErrorcallback('Unable to complete your request. Pls try again.');
+      action.onErrorcallback('Unable to complete your request. Please try again.');
     }
   } catch (error) {
-    action.onErrorcallback('Unable to complete your request. Pls try again.');
+    action.onErrorcallback('Unable to complete your request. Please try again.');
   }
 }
 
