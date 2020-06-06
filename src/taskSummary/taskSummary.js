@@ -77,18 +77,18 @@ class TaskSummaryPage extends React.Component {
     );
   };
 
-  onGetEventBasedTaskListFilterSuccess = () => {
-    this.setState({isLoading: false});
+  onGetFilterForEventBasedTaskListSuccess = () => {
+    // this.setState({isLoading: false});
     // this.state.isTaskList &&
     // this.props.navigation.navigate('TaskTransactionList');
   };
 
-  onGetEventBasedTaskListFilterFailed = errorMsg => {
-    this.setState({
-      isLoading: false,
-      showDlg: true,
-      dlgMsg: errorMsg,
-    });
+  onGetFilterForEventBasedTaskListFailed = errorMsg => {
+    // this.setState({
+    //   isLoading: false,
+    //   showDlg: true,
+    //   dlgMsg: errorMsg,
+    // });
   };
 
   onGetEventBasedTaskListSuccess = () => {
@@ -279,7 +279,7 @@ const mapStateToProps = state => {
   return {
     totalEntries: state.products.totalEntries[0].TotalEntries,
     taskSummary: state.products.taskSummary,
-    stepInfo: state.products.StepInfo[0],
+    stepInfo: state.products.formDefenition.StepInfo[0],
     lastFiveTransaction: state.products.lastFiveTransaction,
   };
 };

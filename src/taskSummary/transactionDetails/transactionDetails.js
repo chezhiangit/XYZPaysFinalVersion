@@ -239,8 +239,6 @@ const mapStateToProps = state => {
   return {
     taskTransactionDetails: state.products.taskTransactionDetails.tbl,
     taskTransactionHistory: state.products.taskTransactionHistory,
-    // taskSummary: state.products.taskSummary,
-    // stepInfo: state.products.StepInfo[0],
   };
 };
 

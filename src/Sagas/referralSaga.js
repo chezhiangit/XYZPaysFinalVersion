@@ -141,12 +141,12 @@ function* postReferralUser(action) {
       action.onErrorcallback(response.Message);
     } else {
       action.onErrorcallback(
-        'Unable to able complete your request. Please try again.',
+        'Unable to complete your request. Please try again.',
       );
     }
   } catch (error) {
     action.onErrorcallback(
-      'Unable to able complete your request. Please try again.',
+      'Unable to complete your request. Please try again.',
     );
   }
 }

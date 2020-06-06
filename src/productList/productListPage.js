@@ -206,7 +206,9 @@ const mapStateToProps = state => {
   console.log('state from products list page ... ', state);
   return {
     productsList: state.products.productsList,
-    formInfo: state.products.formInfo[0],
+    formInfo:
+      state.products?.formDefenition.FormInfo &&
+      state.products?.formDefenition.FormInfo[0],
   };
 };
 const mapDispatchToProps = dispatch => ({

@@ -307,7 +307,7 @@ export default {
     TransId: 'Trans Id',
   },
   videoPage: {
-    headerTitle: 'XYZ pays Demo',
+    headerTitle: '',
   },
   noRecordsFound: {
     info: 'No Records found',

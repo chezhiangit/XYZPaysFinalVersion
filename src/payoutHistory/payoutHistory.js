@@ -343,7 +343,11 @@ class PayoutHistory extends React.Component {
   };
 
   onTransferToPaypalSuccess = () => {
-    this.setState({isLoading: false});
+    // this.setState({isLoading: false});
+    this.props.getPayoutDetails(
+      this.onPayoutDetailsSuccess,
+      this.onPayoutDetailsFailed,
+    );
   };
 
   onTransferToPapalFailed = errorMsg => {

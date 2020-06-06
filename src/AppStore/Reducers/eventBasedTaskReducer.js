@@ -41,9 +41,10 @@ const productsListReducer = (
     case STORE_PRODUCTS_FORM_DEFENITION_LIST:
       return {
         ...state,
-        formDefenition: [...action.formDefenition.FormDefinition],
-        formInfo: [...action.formDefenition.FormInfo],
-        StepInfo: [...action.formDefenition.StepInfo],
+        // formDefenition: [...action.formDefenition.FormDefinition],
+        // formInfo: [...action.formDefenition.FormInfo],
+        // StepInfo: [...action.formDefenition.StepInfo],
+        formDefenition: {...action.formDefenition},
       };
     case STORE_TRANSACTION_FORM_DEFENITION_LIST:
       return {

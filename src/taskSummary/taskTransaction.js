@@ -37,6 +37,13 @@ class TaskTransactionList extends React.Component {
       selecteLead: this.props.route.params.selecteLead,
     };
   }
+  
+  componentDidMount() {
+    this.props.navigation.addListener('focus', () => {
+      this.setState({selecteLead: this.props.route.params.selecteLead});
+     
+  });
+}
 
   onDropDownChanges = (value, selectedIndex, data) => {
     this.setState({isLoading: true, selecteLead: value});
@@ -291,7 +298,7 @@ const mapStateToProps = state => {
   return {
     taskList: state.products.taskList,
     taskListFilter: state.products.taskListFilter,
-    stepInfo: state.products.StepInfo[0],
+    stepInfo: state.products.formDefenition.StepInfo[0],
   };
 };
 

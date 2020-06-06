@@ -20,6 +20,7 @@ import WarningDialog from '../common/UIComponents/warningDialog';
 import {
   postCustomerDetails,
   getEventBasedTaskSummary,
+  getEventBasedTaskList,
 } from '../AppStore/eventBasedTaskActions';
 import ReadOnlyView from '../common/UIComponents/readOnlyView/ReadOnlyView';
 
@@ -159,7 +160,16 @@ class LeadTransactionDetails extends React.Component {
 
   onConfirm = () => {
     if (this.state.postEntry === true) {
-      this.props.navigation.goBack();
+      this.props.getEventBasedTaskList(
+        this.props.stepInfo.FormKey,
+        this.props.stepInfo.StepKey,
+        this.onGetEventBasedTaskListSuccess,
+        this.onGetEventBasedTaskListFailed,
+      );
+      // this.props.navigation.goBack({});
+      this.props.navigation.navigate('TaskTransactionList', {
+        selecteLead: this.props.stepInfo.StepName,
+      });
     }
     this.setState({showDlg: false});
   };
@@ -684,6 +694,20 @@ const mapDispatchToProps = dispatch => ({
         payload,
         FormKey,
         LeadKey,
+        StepKey,
+        onSuccesscallback,
+        onErrocallback,
+      ),
+    ),
+  getEventBasedTaskList: (
+    FormKey,
+    StepKey,
+    onSuccesscallback,
+    onErrocallback,
+  ) =>
+    dispatch(
+      getEventBasedTaskList(
+        FormKey,
         StepKey,
         onSuccesscallback,
         onErrocallback,

@@ -20,15 +20,15 @@ class VideoPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading: true,
+      isLoading: false,
       showDlg: false,
       dlgMsg: '',
     };
   }
 
-  onLoad = () => {
-    this.setState({isLoading: true});
-  };
+  // onLoad = () => {
+  //   this.setState({isLoading: true});
+  // };
   renderVideo = () => {
     console.log(
       'this.props.formInfo.VideoLink .....',
@@ -43,7 +43,12 @@ class VideoPage extends React.Component {
         //       this.props.formInfo.VideoLink
         //     } frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`,
         //   }}
+        onLoadStart={() => this.setState({isLoading: true})}
         onLoadEnd={() => this.setState({isLoading: false})}
+        onError={() => this.setState({isLoading: false})}
+        renderError={() => this.setState({isLoading: false})}
+        onHttpError={() => this.setState({isLoading: false})}
+        allowsFullscreenVideo={true}
       />
     );
   };
@@ -61,7 +66,7 @@ class VideoPage extends React.Component {
 
 const mapStateToProps = state => {
   return {
-    formInfo: state.products.formInfo[0],
+    formInfo: state.products.formDefenition.FormInfo[0],
   };
 };
 

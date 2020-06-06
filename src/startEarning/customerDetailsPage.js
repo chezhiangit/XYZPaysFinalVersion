@@ -23,6 +23,7 @@ import {
   postCustomerDetails,
   getEventBasedTaskSummary,
   getEventBasedTaskList,
+  getFilterForEventBasedTaskList,
 } from '../AppStore/eventBasedTaskActions';
 
 class CustomerDetailsPage extends React.Component {
@@ -71,17 +72,22 @@ class CustomerDetailsPage extends React.Component {
         } else if (item.ControlType === 'checkbox') {
           let isFilled = false;
           const checkboxObj = {};
+          checkboxObj.ControlColumn = item.ControlColumn;
+          checkboxObj.ControlValue = '';
           item.checkBoxGroup.forEach(el => {
             if (el.status) {
               isFilled = true;
-              checkboxObj.ControlColumn = item.ControlColumn;
-              checkboxObj.ControlValue = el.value;
-              payload.push(checkboxObj);
+              // checkboxObj.ControlColumn = item.ControlColumn;
+              // checkboxObj.ControlValue = el.value;
+              checkboxObj.ControlValue =
+                checkboxObj.ControlValue + el.value + ',';
+              // payload.push(checkboxObj);
             }
           });
           if (item.ControlReq === true && isFilled === false) {
             throw {msg: this.getErrorMessage(item)};
           }
+          payload.push(checkboxObj);
         } else if (item.ControlType === 'radio') {
           let isFilled = false;
           const selectObj = {};
@@ -165,6 +171,11 @@ class CustomerDetailsPage extends React.Component {
     if (this.state.postEntry === true) {
       // this.props.navigation.goBack();
       this.setState({isLoading: true});
+      this.props.getFilterForEventBasedTaskList(
+        this.props.stepInfo.FormKey,
+        this.onGetFilterForEventBasedTaskListSuccess,
+        this.onGetFilterForEventBasedTaskListFailed,
+      );
       this.props.getEventBasedTaskList(
         this.props.stepInfo.FormKey,
         this.props.stepInfo.StepKey,
@@ -189,6 +200,20 @@ class CustomerDetailsPage extends React.Component {
       showDlg: true,
       dlgMsg: errorMsg,
     });
+  };
+
+  onGetFilterForEventBasedTaskListSuccess = () => {
+    // this.setState({isLoading: false});
+    // this.state.isTaskList &&
+    // this.props.navigation.navigate('TaskTransactionList');
+  };
+
+  onGetFilterForEventBasedTaskListFailed = errorMsg => {
+    // this.setState({
+    //   isLoading: false,
+    //   showDlg: true,
+    //   dlgMsg: errorMsg,
+    // });
   };
 
   onTextChange = (text, index) => {
@@ -250,7 +275,7 @@ class CustomerDetailsPage extends React.Component {
         this.props.formDefenition,
       );
       const components = [];
-      this.props.formDefenition?.forEach((el, index) => {
+      this.props.formDefenition?.FormDefinition.forEach((el, index) => {
         let returnObj = {
           ...el,
         };
@@ -356,11 +381,11 @@ class CustomerDetailsPage extends React.Component {
                 alignItems: 'center',
                 justifyContent: 'flex-start',
               }}>
-              <Text style={{fontSize: fontscale(16)}}>{item.ControlLabel}</Text>
+              <Text style={{fontSize: fontscale(16)}}>
+                {item.ControlLabel ?? item.HelpText}
+              </Text>
               {item.ControlReq && (
-                <Text style={{fontSize: fontscale(12), color: 'red'}}>
-                  {'\u2B51'}
-                </Text>
+                <Text style={{fontSize: fontscale(12)}}>{'\u2B51'}</Text>
               )}
             </View>
             <View
@@ -394,7 +419,7 @@ class CustomerDetailsPage extends React.Component {
                 alignItems: 'center',
                 justifyContent: 'flex-start',
               }}>
-              <Text>{item.ControlLabel}</Text>
+              <Text>{item.ControlLabel ?? item.HelpText}</Text>
               {item.ControlReq && <Text>{'\u2B51'}</Text>}
             </View>
             <View
@@ -417,11 +442,13 @@ class CustomerDetailsPage extends React.Component {
                 flexDirection: 'row',
                 alignItems: 'center',
                 justifyContent: 'flex-start',
+                marginTop: heightAdapter(30),
               }}
             />
             <Dropdown
               label={
-                item.ControlLabel + (item.ControlReq === false ? '' : '\u2B51')
+                item.ControlLabel ??
+                item.HelpText + (item.ControlReq === false ? '' : '\u2B51')
               }
               labelFontSize={fontscale(16)}
               // labelTextStyle={{fontSize: fontscale(16), color: 'red'}}
@@ -557,19 +584,23 @@ class CustomerDetailsPage extends React.Component {
                 </View>
                 <View style={styles.linkBtnRow}>
                   <View style={styles.videoRow}>
-                    <LinkBtnComponent
-                      btnName={I18n.t('LeadTaskEntry.videlink')}
-                      containerStyle={styles.videoLinkContainer}
-                      btnTextStyle={{marginLeft: 0}}
-                      onClick={() => this.onPlayVideo()}
-                    />
-                    <Text>
-                      <Icon
-                        name="play"
-                        size={fontscale(20)}
-                        color={Colors.linkBtnColor}
-                      />
-                    </Text>
+                    {this.props.formInfo.VideoLink?.length > 0 && (
+                      <>
+                        <LinkBtnComponent
+                          btnName={I18n.t('LeadTaskEntry.videlink')}
+                          containerStyle={styles.videoLinkContainer}
+                          btnTextStyle={{marginLeft: 0}}
+                          onClick={() => this.onPlayVideo()}
+                        />
+                        <Text>
+                          <Icon
+                            name="play"
+                            size={fontscale(20)}
+                            color={Colors.linkBtnColor}
+                          />
+                        </Text>
+                      </>
+                    )}
                   </View>
                   <View>
                     <LinkBtnComponent
@@ -614,8 +645,8 @@ const mapStateToProps = state => {
   console.log('state from new customer details page ....', state);
   return {
     formDefenition: state.products.formDefenition,
-    formInfo: state.products.formInfo[0],
-    stepInfo: state.products.StepInfo[0],
+    formInfo: state.products.formDefenition.FormInfo[0],
+    stepInfo: state.products.formDefenition.StepInfo[0],
   };
 };
 
@@ -652,6 +683,18 @@ const mapDispatchToProps = dispatch => ({
       getEventBasedTaskList(
         FormKey,
         StepKey,
+        onSuccesscallback,
+        onErrocallback,
+      ),
+    ),
+  getFilterForEventBasedTaskList: (
+    FormKey,
+    onSuccesscallback,
+    onErrocallback,
+  ) =>
+    dispatch(
+      getFilterForEventBasedTaskList(
+        FormKey,
         onSuccesscallback,
         onErrocallback,
       ),
