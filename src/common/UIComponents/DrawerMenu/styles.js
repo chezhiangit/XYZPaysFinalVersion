@@ -32,6 +32,9 @@ export default StyleSheet.create({
   },
   navSectionStyle: {
     // backgroundColor: 'lightgrey',
+    borderColor: '#C2C2C2',
+    borderWidth: 1,
+    backgroundColor: '#F2F2F2',
   },
   sectionHeadingStyle: {
     paddingVertical: widthAdapter(10),
@@ -48,5 +51,12 @@ export default StyleSheet.create({
     width: '100%',
     height: heightAdapter(2),
     backgroundColor: '#22caff',
+  },
+  imageView: {
+    paddingBottom: heightAdapter(50),
+    paddingTop: heightAdapter(50),
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

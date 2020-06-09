@@ -1,5 +1,5 @@
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {connect} from 'react-redux';
 // import {SafeAreaView} from 'react-native-safe-area-context';
 import Spinner from 'react-native-loading-spinner-overlay';
@@ -14,6 +14,7 @@ import LinkBtnComponent from '../common/UIComponents/LinkBtn/LinkBtn';
 import styles from './styles';
 import {authenticateUser} from '../AppStore/loginActions';
 import WarningDialog from '../common/UIComponents/warningDialog';
+import images from '../Assets';
 
 class LoginPage extends React.Component {
   constructor(props) {
@@ -96,6 +97,9 @@ class LoginPage extends React.Component {
       <View style={[BaseStyles.baseContainer]}>
         {/* <Header headerName={I18n.t('login.headerTitle')} /> */}
         <View style={styles.loginViewContainer}>
+        <View style={styles.imageView}>
+            <Image source={images.xyziesPays} />
+          </View>
           <View style={styles.loginUserInfo}>
             <Text style={styles.loginUserInfoTxt}>
               {I18n.t('login.userInfo')}

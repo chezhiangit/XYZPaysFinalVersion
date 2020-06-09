@@ -159,7 +159,7 @@ export default StyleSheet.create({
   productName: {
     fontSize: fontscale(25),
     fontWeight: '500',
-    height: heightAdapter(70),
+    // height: heightAdapter(70),
     width: widthAdapter(500),
     color: Clors.primaryAppColor,
   },
@@ -172,6 +172,7 @@ export default StyleSheet.create({
   productImage: {
     height: heightAdapter(200),
     width: widthAdapter(200),
+    resizeMode: 'contain',
   },
   taskStartBtn: {
     height: heightAdapter(70),

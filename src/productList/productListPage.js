@@ -9,7 +9,7 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import I18n from '../localization/i18n';
 import Footer from '../common/UIComponents/Footer';
 import NoRecordsFoundView from '../common/UIComponents/NoRecordsFoundView/noRecordsFoundView';
-import {fontscale, widthAdapter} from '../uttils/adapterUtil';
+import {fontscale, widthAdapter, heightAdapter} from '../uttils/adapterUtil';
 // import Images from '../Assets/index';
 import {
   getProductsList,
@@ -155,6 +155,7 @@ class ProductsListPage extends React.Component {
               {I18n.t('trending.userInfo')}
             </Text>
           </View>
+          <View style={{marginBottom: heightAdapter(500)}}>
           <ScrollView
             showsVerticalScrollIndicator={false}
             style={styles.trendingList}>
@@ -188,6 +189,7 @@ class ProductsListPage extends React.Component {
               />
             </View>
           </ScrollView>
+          </View>
         </View>
         <Footer />
         <WarningDialog

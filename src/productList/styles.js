@@ -10,13 +10,16 @@ const styles = StyleSheet.create({
     marginLeft: widthAdapter(40),
     marginRight: widthAdapter(40),
     paddingTop: heightAdapter(30),
+    // height: '90%',
+    // paddingBottom: heightAdapter(50),
   },
   trendingList: {
     // marginTop: heightAdapter(50),
     // marginBottom: heightAdapter(200),
-    padding: widthAdapter(20),
+    // padding: widthAdapter(20),
     // borderColor: 'red',
     // borderWidth: 1,
+    // height: '80%',
   },
   trendingItemContainer: {
     // flexDirection: 'row',

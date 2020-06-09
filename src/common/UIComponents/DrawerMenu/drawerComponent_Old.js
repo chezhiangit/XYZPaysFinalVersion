@@ -3,11 +3,10 @@ import Spinner from 'react-native-loading-spinner-overlay';
 import styles from './styles';
 import {connect} from 'react-redux';
 import {CommonActions} from '@react-navigation/native';
-import {ScrollView, Text, View, Image} from 'react-native';
+import {ScrollView, Text, View} from 'react-native';
 import I18n from '../../../localization/i18n';
 import WarningDialog from '../warningDialog';
 import {setIntialRoute} from '../../../AppStore/landingPageActions';
-import images from '../../../Assets';
 
 class DrawerComponent extends Component {
   constructor(props) {
@@ -103,9 +102,6 @@ class DrawerComponent extends Component {
       <View style={styles.container}>
         <ScrollView>
           <View>
-          <View style={styles.imageView}>
-          <Image source={images.xyziesPays} />
-            </View>
             {/* <Text style={styles.sectionHeadingStyle}>Section 1</Text> */}
             <View style={styles.navSectionStyle}>
               <Text
@@ -123,17 +119,15 @@ class DrawerComponent extends Component {
             </View>
           </View>
           <View>
-            {/* <Text style={styles.sectionHeadingStyle}>
+            <Text style={styles.sectionHeadingStyle}>
               {I18n.t('hamburgerMenu.profile')}
-            </Text> */}
+            </Text>
             <View style={styles.navSectionStyle}>
               <Text
                 style={styles.navItemStyle}
                 onPress={this.navigateToScreen('ProfilePage')}>
                 {I18n.t('hamburgerMenu.viewProfile')}
               </Text>
-              </View>
-              <View style={styles.navSectionStyle}>
               <Text
                 style={styles.navItemStyle}
                 onPress={this.navigateToScreen('EditProfilePage')}>
@@ -142,24 +136,20 @@ class DrawerComponent extends Component {
             </View>
           </View>
           <View>
-            {/* <Text style={styles.sectionHeadingStyle}>
+            <Text style={styles.sectionHeadingStyle}>
               {I18n.t('hamburgerMenu.referrals')}
-            </Text> */}
+            </Text>
             <View style={styles.navSectionStyle}>
               <Text
                 style={styles.navItemStyle}
                 onPress={this.navigateToScreen('ReferAndEarnPage')}>
                 {I18n.t('hamburgerMenu.referAndEarn')}
               </Text>
-              </View>
-              <View style={styles.navSectionStyle}>
               <Text
                 style={styles.navItemStyle}
                 onPress={this.navigateToScreen('MyReferralsPage')}>
                 {I18n.t('hamburgerMenu.myReferrals')}
               </Text>
-              </View>
-              <View style={styles.navSectionStyle}>
               <Text
                 style={styles.navItemStyle}
                 onPress={this.navigateToScreen('ReferralCommissionsPage')}>
@@ -168,9 +158,9 @@ class DrawerComponent extends Component {
             </View>
           </View>
           <View>
-            {/* <Text style={styles.sectionHeadingStyle}>
+            <Text style={styles.sectionHeadingStyle}>
               {I18n.t('hamburgerMenu.commissionReports')}
-            </Text> */}
+            </Text>
             <View style={styles.navSectionStyle}>
               <Text
                 style={styles.navItemStyle}
@@ -205,9 +195,9 @@ class DrawerComponent extends Component {
             </View>
           </View>
           <View>
-            {/* <Text style={styles.sectionHeadingStyle}>
+            <Text style={styles.sectionHeadingStyle}>
               {I18n.t('hamburgerMenu.products')}
-            </Text> */}
+            </Text>
             <View style={styles.navSectionStyle}>
               <Text
                 style={styles.navItemStyle}
@@ -216,29 +206,23 @@ class DrawerComponent extends Component {
               </Text>
             </View>
           </View>
-          {/* <View style={styles.sectionLine} /> */}
+          <View style={styles.sectionLine} />
           <View style={styles.navSectionStyle}>
             <Text
               style={styles.navItemStyle}
               onPress={this.navigateToScreen('PayoutHistoryPage')}>
               {I18n.t('hamburgerMenu.transferMoney')}
             </Text>
-            </View>
-            <View style={styles.navSectionStyle}>
             <Text
               style={styles.navItemStyle}
               onPress={this.navigateToScreen('ContactUsPage')}>
               {I18n.t('hamburgerMenu.contactUs')}
             </Text>
-            </View>
-            <View style={styles.navSectionStyle}>
             <Text
               style={styles.navItemStyle}
               onPress={this.navigateToScreen('FAQPage')}>
               {I18n.t('hamburgerMenu.FAQs')}
             </Text>
-            </View>
-            <View style={styles.navSectionStyle}>
             <Text
               style={styles.navItemStyle}
               onPress={this.navigateToScreen('USER_LOGOUT')}>

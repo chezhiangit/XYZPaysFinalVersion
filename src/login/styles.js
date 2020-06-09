@@ -36,4 +36,9 @@ export default StyleSheet.create({
     // borderColor: 'red',
     // borderWidth: 1,
   },
+  imageView: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });
