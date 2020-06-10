@@ -82,4 +82,16 @@ export default StyleSheet.create({
     top: 0,
     padding: widthAdapter(5),
   },
+  expandCollapseContainer: {
+    // width: '80%',
+    // height: '100%',
+    // borderWidth: 1,
+    // borderColor: 'red',
+    height: 0,
+    // position: 'absolute',
+    // top: heightAdapter(100),
+    // right: 0,
+    // left: 0,
+    backgroundColor: '#eee',
+  },
 });
