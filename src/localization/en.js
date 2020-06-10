@@ -215,7 +215,7 @@ export default {
     dashboard: 'Home',
     home: 'Dashboard',
     profile: 'Profile',
-    viewProfile: 'View Profile',
+    viewProfile: 'My Profile',
     editProfile: 'Edit Profile',
     referrals: 'Referrals',
     referAndEarn: 'Refer & Earn',
