@@ -18,7 +18,11 @@ import WarningDialog from '../warningDialog';
 import {setIntialRoute} from '../../../AppStore/landingPageActions';
 import images from '../../../Assets';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {widthAdapter, heightAdapter} from '../../../uttils/adapterUtil';
+import {
+  widthAdapter,
+  heightAdapter,
+  fontscale,
+} from '../../../uttils/adapterUtil';
 // import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
 const iconSize = 15;
@@ -192,7 +196,7 @@ class DrawerComponent extends Component {
   };
 
   onCloseMenu = () => {
-    alert('Hi');
+    console.log('close menu ......');
   };
 
   render() {
@@ -206,13 +210,18 @@ class DrawerComponent extends Component {
                 () => alert('Hi')
                 // this.props.navigation.dispatch(DrawerActions.toggleDrawer())
               }> */}
-            <TouchableWithoutFeedback onPress={this.onCloseMenu}>
+            <TouchableOpacity onPress={this.onCloseMenu}>
               <View style={styles.blackBadgeClose}>
-                <Text>
-                  <Icon name="close" size={iconSize} color="white" />
+                <Text
+                  style={{
+                    fontSize: fontscale(15),
+                    color: 'white',
+                    fontWeight: 'bold',
+                  }}>
+                  {/* <Icon name="close" size={iconSize} color="white" /> */}X
                 </Text>
               </View>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
             {/* </TouchableWithoutFeedback> */}
             <View style={styles.imageView}>
               <Image source={images.xyziesPays} />
