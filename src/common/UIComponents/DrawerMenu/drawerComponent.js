@@ -62,8 +62,9 @@ class DrawerComponent extends Component {
     }
   };
 
-  navigateToScreen = route => () => {
+  navigateToScreen = (route, index) => () => {
     try {
+      index && this.setState({selectedIndex: index});
       if (route === 'USER_LOGOUT') {
         // this.setState({isLoading: true});
         this.setState({
@@ -135,13 +136,14 @@ class DrawerComponent extends Component {
     }).start(() => callback());
   };
 
-  toggleExpandCollapse = (show, index) => {
+  toggleExpandCollapse = (show, index, menuIndex) => {
+    this.setState({selectedIndex: menuIndex});
     console.log(
       'this.state.expandCollapseData ....',
       this.state.expandCollapseData,
     );
     this.expandedViewHeight =
-      index === 0 ? heightAdapter(100) : heightAdapter(350);
+      index === 0 ? heightAdapter(85) : heightAdapter(350);
 
     if (show && this.state.currentExpandIndex === -1) {
       this.setState(
@@ -189,59 +191,131 @@ class DrawerComponent extends Component {
     }
   };
 
+  onCloseMenu = () => {
+    alert('Hi');
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <ScrollView>
           <View>
             <View style={styles.blackBadge} />
-            <TouchableWithoutFeedback
+            {/* <TouchableWithoutFeedback
               onPress={
                 () => alert('Hi')
                 // this.props.navigation.dispatch(DrawerActions.toggleDrawer())
-              }>
-              <Text style={styles.blackBadgeClose}>
-                <Icon name="close" size={iconSize} color="white" />
-              </Text>
+              }> */}
+            <TouchableWithoutFeedback onPress={this.onCloseMenu}>
+              <View style={styles.blackBadgeClose}>
+                <Text>
+                  <Icon name="close" size={iconSize} color="white" />
+                </Text>
+              </View>
             </TouchableWithoutFeedback>
+            {/* </TouchableWithoutFeedback> */}
             <View style={styles.imageView}>
               <Image source={images.xyziesPays} />
             </View>
-            <View style={styles.navSectionStyle}>
-              <Text>
-                <Icon name="home" size={iconSize} color="black" />
-              </Text>
-              <Text
-                style={styles.navItemStyle}
-                onPress={this.navigateToScreen('AppLandingPage')}>
-                {I18n.t('hamburgerMenu.dashboard')}
-              </Text>
-            </View>
+            <TouchableWithoutFeedback
+              onPress={this.navigateToScreen('AppLandingPage', 0)}>
+              <View
+                style={[
+                  styles.navSectionStyle,
+                  this.state.selectedIndex === 0 && {
+                    backgroundColor: '#ff5722',
+                  },
+                ]}>
+                <Text>
+                  <Icon
+                    name="home"
+                    size={iconSize}
+                    color={this.state.selectedIndex === 0 ? 'white' : 'black'}
+                  />
+                </Text>
+                <Text
+                  style={[
+                    styles.navItemStyle,
+                    {
+                      color: this.state.selectedIndex === 0 ? 'white' : 'black',
+                      fontWeight: 'bold',
+                    },
+                  ]}
+                  // onPress={this.navigateToScreen('AppLandingPage')}
+                >
+                  {I18n.t('hamburgerMenu.dashboard')}
+                </Text>
+              </View>
+            </TouchableWithoutFeedback>
           </View>
-          <View>
-            <View style={styles.navSectionStyle}>
+          {/* <View> */}
+          <TouchableWithoutFeedback
+            onPress={this.navigateToScreen('ProfilePage', 1)}>
+            <View
+              style={[
+                styles.navSectionStyle,
+                this.state.selectedIndex === 1 && {backgroundColor: '#ff5722'},
+              ]}>
               <Text>
-                <Icon name="user" size={iconSize} color="black" />
+                <Icon
+                  name="user"
+                  size={iconSize}
+                  color={this.state.selectedIndex === 1 ? 'white' : 'black'}
+                />
               </Text>
               <Text
-                style={styles.navItemStyle}
-                onPress={this.navigateToScreen('ProfilePage')}>
+                style={[
+                  styles.navItemStyle,
+                  {
+                    color: this.state.selectedIndex === 1 ? 'white' : 'black',
+                    fontWeight: 'bold',
+                  },
+                ]}
+                // onPress={this.navigateToScreen('ProfilePage')}
+              >
                 {I18n.t('hamburgerMenu.viewProfile')}
               </Text>
             </View>
-            <TouchableWithoutFeedback
-              onPress={() =>
-                this.toggleExpandCollapse(
-                  !this.state.expandCollapseData[0].Expanded,
-                  0,
-                )
-              }>
-              <View style={styles.navSectionStyle}>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+            onPress={() =>
+              this.toggleExpandCollapse(
+                !this.state.expandCollapseData[0].Expanded,
+                0,
+                2,
+              )
+            }>
+            <View
+              style={[
+                styles.navSectionStyle,
+                this.state.selectedIndex === 2 && {backgroundColor: '#ff5722'},
+                {
+                  // borderWidth: 1,
+                  // borderColor: 'red',
+                  justifyContent: 'space-between',
+                },
+              ]}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'flex-start',
+                }}>
                 <Text>
-                  <Icon name="cubes" size={iconSize} color="black" />
+                  <Icon
+                    name="cubes"
+                    size={iconSize}
+                    color={this.state.selectedIndex === 2 ? 'white' : 'black'}
+                  />
                 </Text>
                 <Text
-                  style={styles.navItemStyle}
+                  style={[
+                    styles.navItemStyle,
+                    {
+                      color: this.state.selectedIndex === 2 ? 'white' : 'black',
+                      fontWeight: 'bold',
+                    },
+                  ]}
                   // onPress={() =>
                   //   this.toggleExpandCollapse(
                   //     !this.state.expandCollapseData[0].Expanded,
@@ -252,52 +326,101 @@ class DrawerComponent extends Component {
                   {I18n.t('hamburgerMenu.products')}
                 </Text>
               </View>
-            </TouchableWithoutFeedback>
-            <Animated.View
+              <View style={{paddingRight: widthAdapter(10)}}>
+                <Text>
+                  <Icon
+                    name="caret-down"
+                    size={iconSize}
+                    color={this.state.selectedIndex === 2 ? 'white' : 'black'}
+                  />
+                </Text>
+              </View>
+            </View>
+          </TouchableWithoutFeedback>
+          <Animated.View
+            style={[
+              styles.expandCollapseContainer,
+              this.state.currentExpandIndex === 0 && {
+                height: this.expandCollapseTranslate.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [0, this.expandedViewHeight],
+                }),
+              },
+            ]}>
+            <View
               style={[
-                styles.expandCollapseContainer,
-                this.state.currentExpandIndex === 0 && {
-                  height: this.expandCollapseTranslate.interpolate({
-                    inputRange: [0, 1],
-                    outputRange: [0, this.expandedViewHeight],
-                  }),
+                styles.navSectionStyle,
+                {
+                  flexDirection: 'column',
+                  alignItems: 'flex-start',
+                  paddingLeft: widthAdapter(0),
+                  borderWidth: 0,
                 },
               ]}>
-              <View
-                style={[
-                  styles.navSectionStyle,
-                  {borderWidth: 0, paddingLeft: widthAdapter(50)},
-                ]}>
+              <View style={styles.submenu}>
                 <Text
-                  style={[styles.navItemStyle]}
+                  style={[styles.sumenuItemStyle]}
                   onPress={this.navigateToScreen('TrendingPage')}>
                   {I18n.t('hamburgerMenu.trendingProducts')}
                 </Text>
               </View>
-            </Animated.View>
-          </View>
+            </View>
+          </Animated.View>
+          {/* </View> */}
           <TouchableWithoutFeedback
             onPress={() =>
               this.toggleExpandCollapse(
                 !this.state.expandCollapseData[1].Expanded,
                 1,
+                3,
               )
             }>
-            <View style={styles.navSectionStyle}>
-              <Text>
-                <Icon name="cubes" size={iconSize} color="black" />
-              </Text>
-              <Text
-                style={styles.navItemStyle}
-                // onPress={() =>
-                //   this.toggleExpandCollapse(
-                //     !this.state.expandCollapseData[1].Expanded,
-                //     1,
-                //   )
-                // }
-              >
-                {I18n.t('hamburgerMenu.commissionReports')}
-              </Text>
+            <View
+              style={[
+                styles.navSectionStyle,
+                this.state.selectedIndex === 3 && {backgroundColor: '#ff5722'},
+                {justifyContent: 'space-between'},
+              ]}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  justifyContent: 'flex-start',
+                }}>
+                <Text>
+                  <Icon
+                    name="cubes"
+                    size={iconSize}
+                    color={this.state.selectedIndex === 3 ? 'white' : 'black'}
+                  />
+                </Text>
+                <Text
+                  style={[
+                    styles.navItemStyle,
+                    {
+                      color: this.state.selectedIndex === 3 ? 'white' : 'black',
+                      fontWeight: 'bold',
+                    },
+                  ]}
+                  // onPress={() =>
+                  //   this.toggleExpandCollapse(
+                  //     !this.state.expandCollapseData[1].Expanded,
+                  //     1,
+                  //   )
+                  // }
+                >
+                  {I18n.t('hamburgerMenu.commissionReports')}
+                </Text>
+              </View>
+              <View style={{paddingRight: widthAdapter(10)}}>
+                <Text>
+                  <Icon
+                    name="caret-down"
+                    size={iconSize}
+                    color={this.state.selectedIndex === 3 ? 'white' : 'black'}
+                  />
+                </Text>
+              </View>
             </View>
           </TouchableWithoutFeedback>
           <Animated.View
@@ -316,92 +439,195 @@ class DrawerComponent extends Component {
                 {
                   flexDirection: 'column',
                   alignItems: 'flex-start',
-                  paddingLeft: widthAdapter(50),
+                  paddingLeft: widthAdapter(0),
                   borderWidth: 0,
                 },
               ]}>
-              <Text
-                style={styles.navItemStyle}
-                onPress={this.navigateToScreen('Paid')}>
-                {I18n.t('hamburgerMenu.paid')}
-              </Text>
-              <Text
-                style={styles.navItemStyle}
-                onPress={this.navigateToScreen('Approved')}>
-                {I18n.t('hamburgerMenu.approved')}
-              </Text>
-              <Text
-                style={styles.navItemStyle}
-                onPress={this.navigateToScreen('Pending')}>
-                {I18n.t('hamburgerMenu.pending')}
-              </Text>
-              <Text
-                style={styles.navItemStyle}
-                onPress={this.navigateToScreen('Denied')}>
-                {I18n.t('hamburgerMenu.denied')}
-              </Text>
+              <View style={styles.submenu}>
+                <Text
+                  style={styles.sumenuItemStyle}
+                  onPress={this.navigateToScreen('Paid')}>
+                  {I18n.t('hamburgerMenu.paid')}
+                </Text>
+              </View>
+              <View style={styles.submenu}>
+                <Text
+                  style={styles.sumenuItemStyle}
+                  onPress={this.navigateToScreen('Approved')}>
+                  {I18n.t('hamburgerMenu.approved')}
+                </Text>
+              </View>
+              <View style={styles.submenu}>
+                <Text
+                  style={styles.sumenuItemStyle}
+                  onPress={this.navigateToScreen('Pending')}>
+                  {I18n.t('hamburgerMenu.pending')}
+                </Text>
+              </View>
+
+              <View style={styles.submenu}>
+                <Text
+                  style={styles.sumenuItemStyle}
+                  onPress={this.navigateToScreen('Denied')}>
+                  {I18n.t('hamburgerMenu.denied')}
+                </Text>
+              </View>
             </View>
           </Animated.View>
-          <View style={styles.navSectionStyle}>
-            <Text>
-              <Icon name="exchange" size={iconSize} color="black" />
-            </Text>
-            <Text
-              style={styles.navItemStyle}
-              onPress={this.navigateToScreen('PayoutHistoryPage')}>
-              {I18n.t('hamburgerMenu.transferMoney')}
-            </Text>
-          </View>
-          <View style={styles.navSectionStyle}>
-            <Text>
-              <Icon name="user-plus" size={iconSize} color="black" />
-            </Text>
-            <Text
-              style={styles.navItemStyle}
-              onPress={this.navigateToScreen('ReferAndEarnPage')}>
-              {I18n.t('hamburgerMenu.referAndEarn')}
-            </Text>
-          </View>
-          <View style={styles.navSectionStyle}>
-            <Text>
-              <Icon name="money" size={iconSize} color="black" />
-            </Text>
-            <Text
-              style={styles.navItemStyle}
-              onPress={this.navigateToScreen('ReferralCommissionsPage')}>
-              {I18n.t('hamburgerMenu.referralsCommission')}
-            </Text>
-          </View>
-          <View style={styles.navSectionStyle}>
-            <Text>
-              <Icon name="phone" size={iconSize} color="black" />
-            </Text>
-            <Text
-              style={styles.navItemStyle}
-              onPress={this.navigateToScreen('ContactUsPage')}>
-              {I18n.t('hamburgerMenu.contactUs')}
-            </Text>
-          </View>
-          <View style={styles.navSectionStyle}>
-            <Text>
-              <Icon name="question-circle" size={iconSize} color="black" />
-            </Text>
-            <Text
-              style={styles.navItemStyle}
-              onPress={this.navigateToScreen('FAQPage')}>
-              {I18n.t('hamburgerMenu.FAQs')}
-            </Text>
-          </View>
-          <View style={styles.navSectionStyle}>
-            <Text>
-              <Icon name="sign-out" size={iconSize} color="black" />
-            </Text>
-            <Text
-              style={styles.navItemStyle}
-              onPress={this.navigateToScreen('USER_LOGOUT')}>
-              {I18n.t('hamburgerMenu.signOut')}
-            </Text>
-          </View>
+          <TouchableWithoutFeedback
+            onPress={this.navigateToScreen('PayoutHistoryPage', 4)}>
+            <View
+              style={[
+                styles.navSectionStyle,
+                this.state.selectedIndex === 4 && {backgroundColor: '#ff5722'},
+              ]}>
+              <Text>
+                <Icon
+                  name="exchange"
+                  size={iconSize}
+                  color={this.state.selectedIndex === 4 ? 'white' : 'black'}
+                />
+              </Text>
+              <Text
+                style={[
+                  styles.navItemStyle,
+                  {
+                    color: this.state.selectedIndex === 4 ? 'white' : 'black',
+                    fontWeight: 'bold',
+                  },
+                ]}
+                // onPress={this.navigateToScreen('PayoutHistoryPage')}
+              >
+                {I18n.t('hamburgerMenu.transferMoney')}
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+            onPress={this.navigateToScreen('ReferAndEarnPage', 5)}>
+            <View
+              style={[
+                styles.navSectionStyle,
+                this.state.selectedIndex === 5 && {backgroundColor: '#ff5722'},
+              ]}>
+              <Text>
+                <Icon
+                  name="user-plus"
+                  size={iconSize}
+                  color={this.state.selectedIndex === 5 ? 'white' : 'black'}
+                />
+              </Text>
+              <Text
+                style={[
+                  styles.navItemStyle,
+                  {
+                    color: this.state.selectedIndex === 5 ? 'white' : 'black',
+                    fontWeight: 'bold',
+                  },
+                ]}
+                // onPress={this.navigateToScreen('ReferAndEarnPage')}
+              >
+                {I18n.t('hamburgerMenu.referAndEarn')}
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+            onPress={this.navigateToScreen('ReferralCommissionsPage', 6)}>
+            <View
+              style={[
+                styles.navSectionStyle,
+                this.state.selectedIndex === 6 && {backgroundColor: '#ff5722'},
+              ]}>
+              <Text>
+                <Icon
+                  name="money"
+                  size={iconSize}
+                  color={this.state.selectedIndex === 6 ? 'white' : 'black'}
+                />
+              </Text>
+              <Text
+                style={[
+                  styles.navItemStyle,
+                  {
+                    color: this.state.selectedIndex === 6 ? 'white' : 'black',
+                    fontWeight: 'bold',
+                  },
+                ]}
+                // onPress={this.navigateToScreen('ReferralCommissionsPage')}
+              >
+                {I18n.t('hamburgerMenu.referralsCommission')}
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+            onPress={this.navigateToScreen('ContactUsPage', 7)}>
+            <View
+              style={[
+                styles.navSectionStyle,
+                this.state.selectedIndex === 7 && {backgroundColor: '#ff5722'},
+              ]}>
+              <Text>
+                <Icon
+                  name="phone"
+                  size={iconSize}
+                  color={this.state.selectedIndex === 7 ? 'white' : 'black'}
+                />
+              </Text>
+              <Text
+                style={[
+                  styles.navItemStyle,
+                  {
+                    color: this.state.selectedIndex === 7 ? 'white' : 'black',
+                    fontWeight: 'bold',
+                  },
+                ]}
+                // onPress={this.navigateToScreen('ContactUsPage')}
+              >
+                {I18n.t('hamburgerMenu.contactUs')}
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+            onPress={this.navigateToScreen('FAQPage', 8)}>
+            <View
+              style={[
+                styles.navSectionStyle,
+                this.state.selectedIndex === 8 && {backgroundColor: '#ff5722'},
+              ]}>
+              <Text>
+                <Icon
+                  name="question-circle"
+                  size={iconSize}
+                  color={this.state.selectedIndex === 8 ? 'white' : 'black'}
+                />
+              </Text>
+              <Text
+                style={[
+                  styles.navItemStyle,
+                  {
+                    color: this.state.selectedIndex === 8 ? 'white' : 'black',
+                    fontWeight: 'bold',
+                  },
+                ]}
+                // onPress={this.navigateToScreen('FAQPage')}
+              >
+                {I18n.t('hamburgerMenu.FAQs')}
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
+          <TouchableWithoutFeedback
+            onPress={this.navigateToScreen('USER_LOGOUT')}>
+            <View style={styles.navSectionStyle}>
+              <Text>
+                <Icon name="sign-out" size={iconSize} color="black" />
+              </Text>
+              <Text
+                style={styles.navItemStyle}
+                // onPress={this.navigateToScreen('USER_LOGOUT')}
+              >
+                {I18n.t('hamburgerMenu.signOut')}
+              </Text>
+            </View>
+          </TouchableWithoutFeedback>
         </ScrollView>
         <Spinner
           visible={this.state.isLoading}

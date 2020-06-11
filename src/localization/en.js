@@ -225,7 +225,7 @@ export default {
     viewCommissions: 'View Commissions',
     transferMoney: 'Transfer Money',
     products: 'Products',
-    trendingProducts: 'Trending Products',
+    trendingProducts: 'Trending',
     contactUs: 'ContactUs',
     FAQs: 'FAQs',
     signOut: 'Sign Out',

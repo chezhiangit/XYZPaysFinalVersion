@@ -32,6 +32,7 @@ export default StyleSheet.create({
   },
   navSectionStyle: {
     // backgroundColor: 'lightgrey',
+    // width: '100%',
     flexDirection: 'row',
     borderColor: '#C2C2C2',
     borderWidth: 0.5,
@@ -39,6 +40,20 @@ export default StyleSheet.create({
     alignItems: 'center',
     paddingLeft: widthAdapter(10),
     // justifyContent: 'center',
+  },
+  submenu: {
+    width: '100%',
+    // flexDirection: 'row',
+    borderColor: '#C2C2C2',
+    borderWidth: 0.5,
+    backgroundColor: '#D9D9D9',
+    // alignItems: 'center',
+    paddingLeft: widthAdapter(50),
+  },
+  sumenuItemStyle: {
+    padding: widthAdapter(25),
+    fontFamily: fontFamily.primaryFontFamily,
+    fontSize: fontscale(15),
   },
   sectionHeadingStyle: {
     paddingVertical: widthAdapter(10),
@@ -80,7 +95,9 @@ export default StyleSheet.create({
     zIndex: 0,
     position: 'absolute',
     top: 0,
-    padding: widthAdapter(5),
+    padding: widthAdapter(15),
+    borderWidth: 1,
+    borderColor: 'red',
   },
   expandCollapseContainer: {
     // width: '80%',
