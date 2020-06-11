@@ -52,6 +52,8 @@ import fontFamily from './src/uttils/FontFamily';
 import FontsWeight from './src/uttils/FontsWeight';
 
 import ErrorBoundary from './src/common/UIComponents/ErrorBoundaries/ErrorBoundaries';
+import {Image, StyleSheet} from 'react-native';
+import images from './src/Assets';
 
 // import DummyPage from './src/dummypages/testpage1';
 
@@ -396,7 +398,19 @@ class Main extends React.Component {
           name="HomePage"
           component={this.HomeNavigator}
           options={({route, navigation}) => ({
+            // headerTitle: <Image source={images.xyziesPays} />,
             title: I18n.t('homePage.headerTitle'),
+            // headerBackground: ({}) => (
+            //   <Image
+            //     style={{
+            //       width: 200,
+            //       height: 100,
+            //       resizeMode: 'contain',
+            //       backgroundColor: 'transparent',
+            //     }}
+            //     source={images.xyziesPays}
+            //   />
+            // ),
             headerRight: ({}) => <MenuIcon navigation={navigation} />,
           })}
         />

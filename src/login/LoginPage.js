@@ -3,6 +3,7 @@ import {View, Text, Image} from 'react-native';
 import {connect} from 'react-redux';
 // import {SafeAreaView} from 'react-native-safe-area-context';
 import Spinner from 'react-native-loading-spinner-overlay';
+import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import BaseStyles from '../common/BaseStyles';
 import I18n from '../localization/i18n';
 // import Header from '../common/UIComponents/Header';
@@ -95,44 +96,46 @@ class LoginPage extends React.Component {
     // const {navigation} = this.props;
     return (
       <View style={[BaseStyles.baseContainer]}>
-        {/* <Header headerName={I18n.t('login.headerTitle')} /> */}
-        <View style={styles.loginViewContainer}>
-        <View style={styles.imageView}>
-            <Image source={images.xyziesPays} />
-          </View>
-          <View style={styles.loginUserInfo}>
-            <Text style={styles.loginUserInfoTxt}>
-              {I18n.t('login.userInfo')}
-            </Text>
-          </View>
-          <EmailInputComponent
-            placeholder={I18n.t('login.emailPlaceHolder')}
-            autoFocus={false}
-            onEmailEntered={this.onEmailEntered}
-            email={this.state.userName}
-          />
-          <PasswordInputComponent
-            placeholder={I18n.t('login.passwordPlaceHolder')}
-            autoFocus={false}
-            onPassworEntered={this.onPassworEntered}
-            password={this.state.password}
-          />
-          <View style={styles.signinContainer}>
-            <PrimaryButton
-              btnName={I18n.t('login.loginBtnName')}
-              onSubmit={this.onSubmitLogin}
+        <KeyboardAwareScrollView keyboardShouldPersistTaps="always">
+          {/* <Header headerName={I18n.t('login.headerTitle')} /> */}
+          <View style={styles.loginViewContainer}>
+            <View style={styles.imageView}>
+              <Image source={images.xyziesPays} />
+            </View>
+            <View style={styles.loginUserInfo}>
+              <Text style={styles.loginUserInfoTxt}>
+                {I18n.t('login.userInfo')}
+              </Text>
+            </View>
+            <EmailInputComponent
+              placeholder={I18n.t('login.emailPlaceHolder')}
+              autoFocus={false}
+              onEmailEntered={this.onEmailEntered}
+              email={this.state.userName}
             />
-            <View style={BaseStyles.emptyHView} />
-            <LinkBtnComponent
-              btnName={I18n.t('login.signUpNow')}
-              onClick={this.onSignUp}
+            <PasswordInputComponent
+              placeholder={I18n.t('login.passwordPlaceHolder')}
+              autoFocus={false}
+              onPassworEntered={this.onPassworEntered}
+              password={this.state.password}
             />
-            <LinkBtnComponent
-              btnName={I18n.t('login.forgotPwd')}
-              onClick={this.onForgotPassword}
-            />
+            <View style={styles.signinContainer}>
+              <PrimaryButton
+                btnName={I18n.t('login.loginBtnName')}
+                onSubmit={this.onSubmitLogin}
+              />
+              <View style={BaseStyles.emptyHView} />
+              <LinkBtnComponent
+                btnName={I18n.t('login.signUpNow')}
+                onClick={this.onSignUp}
+              />
+              <LinkBtnComponent
+                btnName={I18n.t('login.forgotPwd')}
+                onClick={this.onForgotPassword}
+              />
+            </View>
           </View>
-        </View>
+        </KeyboardAwareScrollView>
         <Footer />
         <WarningDialog
           shouldShowDeleteWarning={this.state.showDlg}
