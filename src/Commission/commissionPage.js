@@ -416,7 +416,7 @@ class CommissionPage extends React.Component {
         <SliderView
           visible={this.state.showFilter}
           animateFrom="bottom"
-          height={heightAdapter(400)}
+          height={heightAdapter(440)}
           width="100%">
           <View style={styles.sliderContainer}>
             {/* <View

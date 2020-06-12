@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
   },
   expandCollapseHeader: {
     flexDirection: 'row',
-    height: heightAdapter(100),
+    // height: heightAdapter(100),
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingLeft: widthAdapter(20),

@@ -21,7 +21,8 @@ export default StyleSheet.create({
     justifyContent: 'center',
     // borderWidth: 2,
     // borderColor: 'red',
-    // marginTop: heightAdapter(30),
+    marginTop: heightAdapter(30),
+    marginBottom: heightAdapter(75),
   },
   loginUserInfoTxt: {
     fontSize: fontscale(24),

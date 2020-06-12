@@ -261,10 +261,12 @@ const styles = StyleSheet.create({
     width: '100%',
     // height: heightAdapter(50),
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     // borderColor: 'blue',
     // borderWidth: 1,
     paddingLeft: widthAdapter(20),
+    paddingTop: heightAdapter(15),
+    paddingBottom: heightAdapter(15),
     backgroundColor: '#f2f2f2',
   },
   sliderBtnTxtStyle: {

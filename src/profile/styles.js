@@ -152,6 +152,7 @@ export default StyleSheet.create({
     height: heightAdapter(50),
     alignItems: 'center',
     // justifyContent: 'flex-start',
+    marginBottom: heightAdapter(20),
   },
   providerImage: {
     height: heightAdapter(40),

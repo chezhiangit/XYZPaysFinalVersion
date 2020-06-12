@@ -180,7 +180,7 @@ class UserRegistration extends React.Component {
     return (
       <View style={[BaseStyles.baseContainer]}>
         <KeyboardAwareScrollView keyboardShouldPersistTaps="always">
-          <ScrollView style={styles.scrollContainer}>
+          <View style={styles.scrollContainer}>
             {/* <View style={styles.loginUserInfo}>
             <Text style={styles.loginUserInfoTxt}>
               {I18n.t('login.userInfo')}
@@ -237,11 +237,11 @@ class UserRegistration extends React.Component {
               btnName={I18n.t('userRegistration.registerBtnName')}
               onSubmit={this.onSubmitRegistration}
             />
-            {/* <View style={BaseStyles.emptyHView} />
-            <LinkBtnComponent btnName={I18n.t('login.signUpNow')} />
+            <View style={BaseStyles.emptyHView} />
+            {/*  <LinkBtnComponent btnName={I18n.t('login.signUpNow')} />
             <LinkBtnComponent btnName={I18n.t('login.forgotPwd')} /> */}
             {/* </View> */}
-          </ScrollView>
+          </View>
         </KeyboardAwareScrollView>
         <Footer />
         <WarningDialog

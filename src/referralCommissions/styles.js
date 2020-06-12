@@ -186,6 +186,8 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
     paddingLeft: widthAdapter(20),
     backgroundColor: '#f2f2f2',
+    paddingTop: heightAdapter(15),
+    paddingBottom: heightAdapter(15),
   },
   sliderBtnTxtStyle: {
     color: 'black',

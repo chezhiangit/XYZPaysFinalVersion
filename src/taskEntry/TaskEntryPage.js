@@ -460,7 +460,7 @@ class TaskEntryPage extends React.Component {
     return (
       <View style={[BaseStyles.baseContainer]}>
         <KeyboardAwareScrollView keyboardShouldPersistTaps="always">
-          <View showsVerticalScrollIndicator={false}>
+          <View>
             <View style={styles.scrollContainer}>
               <View style={BaseStyles.emptyHView} />
               <View style={styles.taskItemContainer}>

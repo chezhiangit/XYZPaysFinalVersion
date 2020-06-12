@@ -4,7 +4,7 @@ import {widthAdapter, fontscale, heightAdapter} from '../../uttils/adapterUtil';
 
 export default StyleSheet.create({
   scrollContainer: {
-    flex: 1,
+    // flex: 1,
     flexDirection: 'column',
     // borderWidth: 1,
     // borderColor: 'red',
@@ -42,6 +42,7 @@ export default StyleSheet.create({
     height: heightAdapter(50),
     alignItems: 'center',
     justifyContent: 'flex-start',
+    marginBottom: heightAdapter(20),
   },
   providerImage: {
     height: heightAdapter(40),

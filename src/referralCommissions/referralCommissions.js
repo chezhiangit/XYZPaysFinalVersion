@@ -408,7 +408,7 @@ class ReferralCommissions extends React.Component {
         <SliderView
           visible={this.state.showFilter}
           animateFrom="bottom"
-          height={heightAdapter(300)}
+          height={heightAdapter(400)}
           width="100%">
           <View style={styles.sliderContainer}>
             <View
