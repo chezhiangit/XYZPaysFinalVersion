@@ -147,7 +147,7 @@ class DrawerComponent extends Component {
       this.state.expandCollapseData,
     );
     this.expandedViewHeight =
-      index === 0 ? heightAdapter(85) : heightAdapter(350);
+      index === 0 ? heightAdapter(90) : heightAdapter(360);
 
     if (show && this.state.currentExpandIndex === -1) {
       this.setState(

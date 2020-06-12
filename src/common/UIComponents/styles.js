@@ -80,9 +80,9 @@ export default StyleSheet.create({
   },
   captionText: {
     position: 'absolute',
-    top: widthAdapter(-27),
+    top: widthAdapter(-29),
     left: widthAdapter(30),
-    height: widthAdapter(50),
+    // height: widthAdapter(50),
     fontSize: fontscale(12),
     backgroundColor: Colors.white,
     padding: widthAdapter(10),

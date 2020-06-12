@@ -155,40 +155,40 @@ class ProductsListPage extends React.Component {
               {I18n.t('trending.userInfo')}
             </Text>
           </View>
-          <View style={{marginBottom: heightAdapter(500)}}>
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-            style={styles.trendingList}>
-            {this.props.productsList.length > 0
-              ? this.props.productsList?.map((item, index) =>
-                  this.renderTrendingCard(item, index),
-                )
-              : this.renderNoRecordsFound()}
-            <View style={styles.referEarnContainer}>
-              <View style={styles.titleRow}>
-                <Text style={styles.titlTextRefer}>Refer</Text>
-                <Text style={styles.titlTextEarn}>{' & Earn'}</Text>
+          <View>
+            <ScrollView
+              showsVerticalScrollIndicator={false}
+              style={styles.trendingList}>
+              {this.props.productsList.length > 0
+                ? this.props.productsList?.map((item, index) =>
+                    this.renderTrendingCard(item, index),
+                  )
+                : this.renderNoRecordsFound()}
+              <View style={styles.referEarnContainer}>
+                <View style={styles.titleRow}>
+                  <Text style={styles.titlTextRefer}>Refer</Text>
+                  <Text style={styles.titlTextEarn}>{' & Earn'}</Text>
+                </View>
+                <View
+                  style={[
+                    styles.taskDescription,
+                    {
+                      paddingLeft: widthAdapter(40),
+                      paddingRight: widthAdapter(40),
+                    },
+                  ]}>
+                  <Text style={styles.taskDescriptionTxt}>
+                    Start getting commission for referring new users to XYZPays
+                  </Text>
+                </View>
+                <View style={BaseStyles.emptyHView} />
+                <PrimaryButton
+                  btnName={I18n.t('productsList.referBtnName')}
+                  onSubmit={this.onStartReferring}
+                  btnStyle={styles.btnStyle}
+                />
               </View>
-              <View
-                style={[
-                  styles.taskDescription,
-                  {
-                    paddingLeft: widthAdapter(40),
-                    paddingRight: widthAdapter(40),
-                  },
-                ]}>
-                <Text style={styles.taskDescriptionTxt}>
-                  Start getting commission for referring new users to XYZPays
-                </Text>
-              </View>
-              <View style={BaseStyles.emptyHView} />
-              <PrimaryButton
-                btnName={I18n.t('productsList.referBtnName')}
-                onSubmit={this.onStartReferring}
-                btnStyle={styles.btnStyle}
-              />
-            </View>
-          </ScrollView>
+            </ScrollView>
           </View>
         </View>
         <Footer />

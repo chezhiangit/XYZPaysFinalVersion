@@ -136,11 +136,13 @@ const styles = StyleSheet.create({
 
   productDetailsContainer: {
     // flex: 1,
+    // flexDirection: 'column',
     marginLeft: widthAdapter(40),
     marginRight: widthAdapter(40),
-    paddingTop: heightAdapter(50),
+    marginTop: heightAdapter(50),
     // borderColor: 'red',
     // borderWidth: 1,
+    marginBottom: heightAdapter(200),
   },
   productNameLabel: {
     fontFamily: fontFamily.primaryFontFamily,

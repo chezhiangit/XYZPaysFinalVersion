@@ -211,7 +211,7 @@ export default StyleSheet.create({
   },
   topContainer: {
     flexDirection: 'row',
-    width: heightAdapter(745),
+    // width: heightAdapter(745),
     // marginBottom: widthAdapter(75),
     // alignItems: 'center',
     // justifyContent: 'center',
@@ -220,8 +220,8 @@ export default StyleSheet.create({
     // borderWidth: 1,
     // borderBottomWidth: widthAdapter(5),
     // borderColor: 'red',
-    // paddingTop: widthAdapter(30),
-    // paddingBottom: widthAdapter(30),
+    paddingTop: widthAdapter(50),
+    paddingBottom: widthAdapter(50),
     // paddingLeft: widthAdapter(10),
     // borderWidth: 1,
     // borderColor: 'red',
@@ -235,7 +235,7 @@ export default StyleSheet.create({
   rightViewContainer: {
     width: widthAdapter(225),
     // height: '100%',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'center',
     // borderWidth: 1,
     // borderColor: 'green',

@@ -158,6 +158,7 @@ class AppLandingPage extends React.Component {
                         // height: this.state.myMoneyheight,
                         width: widthAdapter(400),
                         height: heightAdapter(400),
+                        resizeMode: 'contain',
                       }}
                     />
                   </View>

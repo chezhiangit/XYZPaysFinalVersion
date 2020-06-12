@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import {widthAdapter, heightAdapter, fontscale} from '../uttils/adapterUtil';
 import Colors from '../uttils/Colors';
 import fontFamily from '../uttils/FontFamily';
@@ -15,7 +15,8 @@ const styles = StyleSheet.create({
   },
   trendingList: {
     // marginTop: heightAdapter(50),
-    // marginBottom: heightAdapter(200),
+    marginBottom:
+      Platform.OS === 'ios' ? heightAdapter(500) : heightAdapter(600),
     // padding: widthAdapter(20),
     // borderColor: 'red',
     // borderWidth: 1,

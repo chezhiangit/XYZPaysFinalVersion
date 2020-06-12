@@ -68,7 +68,7 @@ export default StyleSheet.create({
   },
   leftView: {
     width: '48%',
-    height: heightAdapter(800),
+    // height: heightAdapter(800),
     // borderColor: 'blue',
     // borderWidth: 1,
     marginRight: '2%',
@@ -76,16 +76,17 @@ export default StyleSheet.create({
   rightView: {
     marginLeft: '2%',
     width: '48%',
-    height: heightAdapter(800),
+    // height: heightAdapter(800),
     // borderColor: 'blue',
     // borderWidth: 1,
   },
   leftBannerView: {
     width: '100%',
-    height: heightAdapter(700),
+    // height: heightAdapter(700),
     // borderWidth: 1,
     // borderColor: 'red',
     backgroundColor: Colors.primaryAppColor,
+    paddingBottom: heightAdapter(50),
   },
   bannerImageView: {
     height: heightAdapter(500),
@@ -108,10 +109,11 @@ export default StyleSheet.create({
   },
   rightBannerView: {
     width: '100%',
-    height: heightAdapter(700),
+    // height: heightAdapter(700),
     // borderWidth: 1,
     // borderColor: 'red',
     backgroundColor: Colors.primaryAppColor,
+    paddingBottom: heightAdapter(50),
   },
   bannerBottom: {
     height: heightAdapter(100),

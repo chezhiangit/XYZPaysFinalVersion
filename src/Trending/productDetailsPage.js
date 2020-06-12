@@ -8,6 +8,7 @@ import {
   // Easing,
   // TouchableOpacity,
   // TouchableWithoutFeedback,
+  ScrollView,
 } from 'react-native';
 import {connect} from 'react-redux';
 import BaseStyles from '../common/BaseStyles';
@@ -86,7 +87,7 @@ class ProductDetailsPage extends React.Component {
   render() {
     return (
       <View style={BaseStyles.baseContainer}>
-        <View style={styles.productDetailsContainer}>
+        <ScrollView style={styles.productDetailsContainer}>
           <View style={styles.productNameContainer}>
             <Text style={styles.productNameLabel}>
               {I18n.t('productDetails.productName')}
@@ -109,9 +110,7 @@ class ProductDetailsPage extends React.Component {
                 this.props.productDetails['Commission Amount']}
               ,{' '}
             </Text>
-            {/* <Text style={styles.commissionStatusLabel}>
-              {I18n.t('productDetails.status')}
-            </Text> */}
+            
             <Text style={styles.commissionAmount}>
               {this.props.productDetails &&
                 this.props.productDetails['Commission Status']}
@@ -217,7 +216,7 @@ class ProductDetailsPage extends React.Component {
               />
             </View>
           </View>
-        </View>
+        </ScrollView>
         <Footer />
         <WarningDialog
           shouldShowDeleteWarning={this.state.showDlg}
