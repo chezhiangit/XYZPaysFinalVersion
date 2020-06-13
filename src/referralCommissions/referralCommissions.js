@@ -323,7 +323,7 @@ class ReferralCommissions extends React.Component {
                 <View style={styles.selectionBox}>
                   {/* <Image style={styles.image} source={''} /> */}
                   <View style={{flexDirection: 'row'}}>
-                    <Text>
+                    <Text style={{alignSelf: 'center'}}>
                       <Icon
                         name="calendar"
                         size={20}

@@ -37,13 +37,12 @@ class TaskTransactionList extends React.Component {
       selecteLead: this.props.route.params.selecteLead,
     };
   }
-  
+
   componentDidMount() {
     this.props.navigation.addListener('focus', () => {
       this.setState({selecteLead: this.props.route.params.selecteLead});
-     
-  });
-}
+    });
+  }
 
   onDropDownChanges = (value, selectedIndex, data) => {
     this.setState({isLoading: true, selecteLead: value});
@@ -269,13 +268,15 @@ class TaskTransactionList extends React.Component {
             </View>
           </View>
           {this.props.taskList.length > 0 ? (
-            <FlatList
-              showsVerticalScrollIndicator={false}
-              style={styles.taskListView}
-              data={this.props.taskList}
-              renderItem={this.renderTaskList}
-              keyExtractor={(item, index) => index}
-            />
+            <View style={styles.taskListView}>
+              <FlatList
+                showsVerticalScrollIndicator={false}
+                // style={styles.taskListView}
+                data={this.props.taskList}
+                renderItem={this.renderTaskList}
+                keyExtractor={(item, index) => index}
+              />
+            </View>
           ) : (
             this.renderNoRecordsFound()
           )}

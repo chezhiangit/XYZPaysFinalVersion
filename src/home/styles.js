@@ -43,18 +43,23 @@ export default StyleSheet.create({
     color: Colors.primaryAppColor,
   },
   taskBtn: {
-    height: heightAdapter(50),
-    width: widthAdapter(400),
+    // height: heightAdapter(50),
+    // width: widthAdapter(400),
     backgroundColor: Colors.primaryAppColor,
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
     // borderWidth: 1,
     borderRadius: 5,
+    paddingBottom: heightAdapter(10),
+    paddingTop: heightAdapter(10),
+    paddingLeft: widthAdapter(10),
+    paddingRight: widthAdapter(10),
   },
   taskText: {
     fontFamily: fontFamily.primaryFontFamily,
     color: Clors.white,
     fontWeight: 'bold',
+    alignSelf: 'center',
   },
   approveBtnStyle: {
     backgroundColor: Clors.approvedAmtBgColor,
@@ -91,7 +96,7 @@ export default StyleSheet.create({
   },
 
   taskListContainer: {
-    height: heightAdapter(435),
+    // height: heightAdapter(435),
     width: widthAdapter(745),
     // borderColor: 'gray',
     // borderWidth: 1,
@@ -136,7 +141,7 @@ export default StyleSheet.create({
     // borderWidth: 1,
   },
   taskItemCardContainer: {
-    height: heightAdapter(300),
+    // height: heightAdapter(300),
     width: widthAdapter(700),
     borderWidth: 1,
     borderColor: Colors.primaryAppColor,
@@ -145,6 +150,8 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     // padding: widthAdapter(10),
+    paddingTop: heightAdapter(30),
+    paddingBottom: heightAdapter(30),
   },
   taskDetailRow: {
     flexDirection: 'row',
@@ -175,6 +182,10 @@ export default StyleSheet.create({
     resizeMode: 'contain',
   },
   taskStartBtn: {
-    height: heightAdapter(70),
+    // paddingTop: heightAdapter(10),
+    // height: heightAdapter(100),
+    // paddingBottom: heightAdapter(20),
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
 });

@@ -1,5 +1,11 @@
 import * as React from 'react';
-import {View, Text, Image, TouchableWithoutFeedback} from 'react-native';
+import {
+  View,
+  Text,
+  Image,
+  TouchableWithoutFeedback,
+  ScrollView,
+} from 'react-native';
 import {connect} from 'react-redux';
 import Spinner from 'react-native-loading-spinner-overlay';
 import BaseStyles from '../common/BaseStyles';
@@ -77,106 +83,112 @@ class AppLandingPage extends React.Component {
     return (
       <View style={[BaseStyles.baseContainer]}>
         <View style={BaseStyles.emptyHView} />
-        <View style={styles.landingViewContainer}>
-          <View style={BaseStyles.emptyHView} />
-          <View style={BaseStyles.emptyHView} />
-          <View style={styles.imageView}>
-            <Image source={images.xyziesPays} />
-          </View>
-          <View style={styles.logedInUserInfo}>
-            <Text style={styles.logedInUserHiText}>
-              {I18n.t('landingPage.hi')}
-            </Text>
-            <Text style={[styles.logedInUserHiText, styles.primaryColor]}>
-              {` ${this.props.RepName}`}
-            </Text>
-            {/* <Text style={styles.logedInUserHiText}>
+        <View style={{flex: 1, marginBottom: heightAdapter(200)}}>
+          <ScrollView style={styles.landingViewContainer}>
+            {/* <View style={BaseStyles.emptyHView} />
+          <View style={BaseStyles.emptyHView} /> */}
+            <View style={styles.imageView}>
+              <Image source={images.xyziesPays} />
+            </View>
+            <View style={styles.logedInUserInfo}>
+              <Text style={styles.logedInUserHiText}>
+                {I18n.t('landingPage.hi')}
+              </Text>
+              <Text style={[styles.logedInUserHiText, styles.primaryColor]}>
+                {` ${this.props.RepName}`}
+              </Text>
+              {/* <Text style={styles.logedInUserHiText}>
               {` ${this.props.dashboardData?.repLastName}`}
             </Text> */}
-          </View>
-          <View style={styles.userMessage}>
-            <Text style={styles.userMessageTxt}>
-              {I18n.t('landingPage.userMsg')}
-            </Text>
-          </View>
-          <View style={BaseStyles.emptyHView} />
-          <View style={BaseStyles.emptyHView} />
-          <View style={styles.mainViewContainer}>
-            <TouchableWithoutFeedback onPress={this.onBannerLeftViewPressed}>
-              <View style={styles.leftView}>
-                <View style={styles.leftBannerView}>
-                  <View style={styles.bannerImageView}>
-                    <Image
-                      source={{
-                        isStatic: true,
-                        uri: this.props.MakeMoney,
-                        method: 'GET',
-                        // headers: {
-                        //   clubId: NetTool.clubId,
-                        //   'Ocp-Apim-Subscription-Key': NetTool.subscriptionKey,
-                        // },
-                      }}
-                      style={{
-                        // width: this.state.makeMoneywidth,
-                        // height: this.state.makeMoneyheight,
-                        width: widthAdapter(400),
-                        height: heightAdapter(400),
-                        resizeMode: 'contain',
-                      }}
+            </View>
+            <View style={styles.userMessage}>
+              <Text style={styles.userMessageTxt}>
+                {I18n.t('landingPage.userMsg')}
+              </Text>
+            </View>
+            <View style={BaseStyles.emptyHView} />
+            <View style={BaseStyles.emptyHView} />
+            <View style={styles.mainViewContainer}>
+              <TouchableWithoutFeedback onPress={this.onBannerLeftViewPressed}>
+                <View style={styles.leftView}>
+                  <View style={styles.leftBannerView}>
+                    <View style={styles.bannerImageView}>
+                      <Image
+                        source={{
+                          isStatic: true,
+                          uri: this.props.MakeMoney,
+                          method: 'GET',
+                          // headers: {
+                          //   clubId: NetTool.clubId,
+                          //   'Ocp-Apim-Subscription-Key': NetTool.subscriptionKey,
+                          // },
+                        }}
+                        style={{
+                          // width: this.state.makeMoneywidth,
+                          // height: this.state.makeMoneyheight,
+                          width: widthAdapter(400),
+                          height: heightAdapter(400),
+                          resizeMode: 'contain',
+                        }}
+                      />
+                    </View>
+                    <View style={styles.bannerTextView}>
+                      <Text style={styles.bannerViewText}>
+                        {I18n.t('landingPage.make')}
+                      </Text>
+                      <Text style={styles.bannerViewText}>
+                        {I18n.t('landingPage.money')}
+                      </Text>
+                    </View>
+                  </View>
+                  <View style={styles.bannerBottom}>
+                    <LinkBtnComponent
+                      btnName={I18n.t('landingPage.clickHere')}
                     />
                   </View>
-                  <View style={styles.bannerTextView}>
-                    <Text style={styles.bannerViewText}>
-                      {I18n.t('landingPage.make')}
-                    </Text>
-                    <Text style={styles.bannerViewText}>
-                      {I18n.t('landingPage.money')}
-                    </Text>
+                </View>
+              </TouchableWithoutFeedback>
+              <TouchableWithoutFeedback onPress={this.onBannerRightViewPressed}>
+                <View style={styles.rightView}>
+                  <View style={styles.rightBannerView}>
+                    <View style={styles.bannerImageView}>
+                      <Image
+                        source={{
+                          isStatic: true,
+                          uri: this.props.MyMoney,
+                          method: 'GET',
+                          // headers: {
+                          //   clubId: NetTool.clubId,
+                          //   'Ocp-Apim-Subscription-Key': NetTool.subscriptionKey,
+                          // },
+                        }}
+                        style={{
+                          // width: this.state.myMoneywidth,
+                          // height: this.state.myMoneyheight,
+                          width: widthAdapter(400),
+                          height: heightAdapter(400),
+                          resizeMode: 'contain',
+                        }}
+                      />
+                    </View>
+                    <View style={styles.bannerTextView}>
+                      <Text style={styles.bannerViewText}>
+                        {I18n.t('landingPage.my')}
+                      </Text>
+                      <Text style={styles.bannerViewText}>
+                        {I18n.t('landingPage.money')}
+                      </Text>
+                    </View>
                   </View>
-                </View>
-                <View style={styles.bannerBottom}>
-                  <LinkBtnComponent btnName={I18n.t('landingPage.clickHere')} />
-                </View>
-              </View>
-            </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={this.onBannerRightViewPressed}>
-              <View style={styles.rightView}>
-                <View style={styles.rightBannerView}>
-                  <View style={styles.bannerImageView}>
-                    <Image
-                      source={{
-                        isStatic: true,
-                        uri: this.props.MyMoney,
-                        method: 'GET',
-                        // headers: {
-                        //   clubId: NetTool.clubId,
-                        //   'Ocp-Apim-Subscription-Key': NetTool.subscriptionKey,
-                        // },
-                      }}
-                      style={{
-                        // width: this.state.myMoneywidth,
-                        // height: this.state.myMoneyheight,
-                        width: widthAdapter(400),
-                        height: heightAdapter(400),
-                        resizeMode: 'contain',
-                      }}
+                  <View style={styles.bannerBottom}>
+                    <LinkBtnComponent
+                      btnName={I18n.t('landingPage.clickHere')}
                     />
                   </View>
-                  <View style={styles.bannerTextView}>
-                    <Text style={styles.bannerViewText}>
-                      {I18n.t('landingPage.my')}
-                    </Text>
-                    <Text style={styles.bannerViewText}>
-                      {I18n.t('landingPage.money')}
-                    </Text>
-                  </View>
                 </View>
-                <View style={styles.bannerBottom}>
-                  <LinkBtnComponent btnName={I18n.t('landingPage.clickHere')} />
-                </View>
-              </View>
-            </TouchableWithoutFeedback>
-          </View>
+              </TouchableWithoutFeedback>
+            </View>
+          </ScrollView>
         </View>
         <Footer />
         <WarningDialog

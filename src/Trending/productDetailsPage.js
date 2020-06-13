@@ -87,7 +87,7 @@ class ProductDetailsPage extends React.Component {
   render() {
     return (
       <View style={BaseStyles.baseContainer}>
-        <ScrollView style={styles.productDetailsContainer}>
+        <ScrollView style={styles.productDetailsContainer} showsVerticalScrollIndicator={false}>
           <View style={styles.productNameContainer}>
             <Text style={styles.productNameLabel}>
               {I18n.t('productDetails.productName')}

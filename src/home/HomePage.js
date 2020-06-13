@@ -209,6 +209,7 @@ class HomePage extends React.Component {
           btnStyle={styles.taskStartBtn}
           onSubmit={() => this.onPressStartTaskButton(index)}
           btnName={I18n.t('homePage.taskBtnName')}
+          // btnTexStyle={{}}
         />
       </View>
     );

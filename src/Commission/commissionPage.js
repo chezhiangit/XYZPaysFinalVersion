@@ -331,7 +331,7 @@ class CommissionPage extends React.Component {
                 }>
                 <View style={styles.selectionBox}>
                   <View style={{flexDirection: 'row'}}>
-                    <Text>
+                    <Text style={{alignSelf: 'center'}}>
                       <Icon
                         name="calendar"
                         size={fontscale(20)}

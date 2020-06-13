@@ -392,6 +392,7 @@ class Main extends React.Component {
             fontWeight: FontsWeight.header,
             color: Colors.primaryFontColor,
             fontFamily: fontFamily.primaryFontFamily,
+            // alignSelf: 'center',
           },
         }}>
         <Stack.Screen

@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Platform} from 'react-native';
 import {widthAdapter, heightAdapter, fontscale} from '../uttils/adapterUtil';
 import Colors from '../uttils/Colors';
 import fontFamily from '../uttils/FontFamily';
@@ -90,6 +90,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     // borderColor: 'red',
     // borderWidth: 1,
+    marginTop: heightAdapter(20),
+    marginBottom: heightAdapter(20),
   },
   transHeaderView: {
     height: heightAdapter(50),
@@ -137,6 +139,9 @@ const styles = StyleSheet.create({
   taskListView: {
     borderColor: '#a7a7a7',
     borderWidth: 1,
+    alignItems: 'center',
+    marginBottom:
+      Platform.OS === 'ios' ? heightAdapter(250) : heightAdapter(200),
   },
   transTopView: {
     flexDirection: 'row',
@@ -235,20 +240,26 @@ const styles = StyleSheet.create({
   },
   labelViewStyle: {
     width: widthAdapter(500),
-    height: heightAdapter(60),
+    // height: heightAdapter(60),
+    justifyContent: 'center',
   },
   valueViewStyle: {
     width: widthAdapter(175),
-    alignItems: 'flex-end',
+    // alignItems: 'flex-end',
     justifyContent: 'center',
-    height: heightAdapter(60),
+    // height: heightAdapter(60),
   },
   btnStyle: {
     height: heightAdapter(60),
     // width: widthAdapter(250),
     fontSize: fontscale(12),
-    paddingLeft: widthAdapter(20),
-    paddingRight: widthAdapter(20),
+    // paddingLeft: widthAdapter(20),
+    // paddingRight: widthAdapter(20),
+    // padding: widthAdapter(30),
+    paddingRight: widthAdapter(10),
+    paddingLeft: widthAdapter(10),
+    paddingTop: heightAdapter(10),
+    paddingBottom: heightAdapter(10),
   },
 });
 

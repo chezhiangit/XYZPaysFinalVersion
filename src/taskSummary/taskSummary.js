@@ -115,7 +115,7 @@ class TaskSummaryPage extends React.Component {
     this.setState({showDlg: false});
   };
 
-  renderRountBtn = (item, index) => {
+  renderRoundBtn = (item, index) => {
     return (
       <View style={styles.roundBtnView}>
         <RoundButton
@@ -242,7 +242,7 @@ class TaskSummaryPage extends React.Component {
             </View>
             <View style={styles.leadCountBtnRow}>
               {this.props.taskSummary.map((item, index) =>
-                this.renderRountBtn(item, index),
+                this.renderRoundBtn(item, index),
               )}
             </View>
             <View style={styles.transHeaderView}>

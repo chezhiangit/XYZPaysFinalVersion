@@ -214,8 +214,8 @@ class MyReferrals extends React.Component {
     console.log('this.state.commissionData ....', this.state.commissionData);
     this.expandedViewHeight =
       this.state.commissionData[index].ReferralStatus === 'Registered'
-        ? heightAdapter(400)
-        : heightAdapter(300);
+        ? fontscale(80) + heightAdapter(210)
+        : fontscale(60) + heightAdapter(180);
 
     if (show && this.state.currentIndex === -1) {
       this.setState(

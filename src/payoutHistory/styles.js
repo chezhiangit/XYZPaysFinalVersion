@@ -40,8 +40,8 @@ export default StyleSheet.create({
     fontWeight: FontsWeight.bold,
   },
   dropdownContainer: {
-    width: '100%',
-    height: heightAdapter(70),
+    // width: '100%',
+    // height: heightAdapter(70),
     borderWidth: 1,
     borderColor: '#737373',
     alignItems: 'center',
@@ -60,12 +60,14 @@ export default StyleSheet.create({
   selectionBox: {
     flexDirection: 'row',
     width: '100%',
-    height: '100%',
+    // height: '100%',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingLeft: widthAdapter(20),
     paddingRight: widthAdapter(20),
     backgroundColor: '#333333',
+    paddingBottom: heightAdapter(10),
+    paddingTop: heightAdapter(10),
   },
   selectedValue: {
     fontSize: fontscale(15),
@@ -103,7 +105,7 @@ export default StyleSheet.create({
   segmentedView: {
     width: '100%',
     position: 'absolute',
-    top: heightAdapter(68),
+    top: heightAdapter(100),
     left: widthAdapter(0),
     borderBottomLeftRadius: widthAdapter(8),
     borderBottomRightRadius: widthAdapter(8),

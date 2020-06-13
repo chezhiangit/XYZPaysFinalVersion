@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   productName: {
-    height: heightAdapter(75),
+    // height: heightAdapter(75),
     fontSize: fontscale(24),
     color: Colors.black,
     fontWeight: 'bold',

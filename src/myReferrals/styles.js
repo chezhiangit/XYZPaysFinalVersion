@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   regStatus: {
-    height: heightAdapter(50),
+    // height: heightAdapter(50),
     alignItems: 'center',
     justifyContent: 'center',
     marginRight: widthAdapter(30),
@@ -137,6 +137,8 @@ const styles = StyleSheet.create({
     backgroundColor: '#32CD32',
     paddingRight: widthAdapter(20),
     paddingLeft: widthAdapter(20),
+    paddingTop: heightAdapter(10),
+    paddingBottom: heightAdapter(10),
   },
   regStatusText: {
     fontSize: fontscale(15),

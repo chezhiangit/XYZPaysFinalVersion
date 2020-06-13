@@ -11,9 +11,9 @@ const styles = StyleSheet.create({
   },
   dropdownContainer: {
     borderWidth: 1,
-    borderColor: '#737373',
+    // borderColor: '#737373',
     alignItems: 'center',
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     borderRadius: widthAdapter(3),
     borderBottomWidth: widthAdapter(4),
     // zIndex: 100,
@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
     width: widthAdapter(750),
     // borderWidth: 1,
     // borderColor: 'blue',
+    alignItems: 'center',
+    justifyContent: 'center',
     zIndex: 999,
   },
   image: {
@@ -42,12 +44,14 @@ const styles = StyleSheet.create({
   selectionBox: {
     flexDirection: 'row',
     width: '100%',
-    height: '100%',
+    // height: '100%',
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingLeft: widthAdapter(20),
     paddingRight: widthAdapter(20),
     backgroundColor: '#333333',
+    // borderWidth: 1,
+    // borderColor: 'green',
   },
   selectedValue: {
     fontSize: fontscale(20),

@@ -18,6 +18,7 @@ export default StyleSheet.create({
     // borderWidth: 1,
   },
   imageView: {
+    marginTop: heightAdapter(20),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -44,12 +45,14 @@ export default StyleSheet.create({
   userMessage: {
     // width: '100%',
     flexDirection: 'row',
-    height: heightAdapter(50),
+    // height: heightAdapter(50),
     alignItems: 'center',
     justifyContent: 'center',
     // borderWidth: 2,
     // borderColor: 'red',
     // marginTop: heightAdapter(30),
+    paddingBottom: heightAdapter(10),
+    paddingTop: heightAdapter(10),
   },
   userMessageTxt: {
     fontSize: fontscale(15),
