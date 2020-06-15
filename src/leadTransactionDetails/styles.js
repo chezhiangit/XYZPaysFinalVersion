@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   productName: {
-    fontSize: fontscale(24),
+    fontSize: fontscale(30),
     color: Colors.black,
     fontWeight: 'bold',
     fontFamily: fontFamily.primaryFontFamily,
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
   },
   userInfoTxt: {
     color: '#737373',
-    fontSize: fontscale(14),
+    fontSize: fontscale(25),
     fontFamily: FontFamily.primaryFontFamily,
   },
   linkBtnRow: {
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.primaryFontFamily,
     color: '#333',
     fontWeight: '700',
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(40),
   },
   leadContainer: {
     borderColor: '#a7a7a7',
@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   },
   leadText: {
     color: '#a94442',
-    fontSize: fontscale(17),
+    fontSize: fontscale(22),
     fontWeight: 'bold',
     marginBottom: heightAdapter(20),
   },
@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
   },
   statusTxt: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(40),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.white,
     fontWeight: '500',
@@ -155,13 +155,13 @@ const styles = StyleSheet.create({
     // backgroundColor: 'green',
   },
   skuLabel: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(40),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#606060',
     fontWeight: 'bold',
   },
   skuTxt: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(40),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#606060',
     fontWeight: 'bold',
@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.primaryFontFamily,
     color: '#333',
     fontWeight: '700',
-    fontSize: widthAdapter(35),
+    fontSize: widthAdapter(40),
   },
   dot: {
     width: widthAdapter(25),
@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   selectionTxt: {
-    fontSize: widthAdapter(25),
+    fontSize: fontscale(30),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#737373',
   },
@@ -211,12 +211,12 @@ const styles = StyleSheet.create({
     // borderWidth: 1,
   },
   label: {
-    fontSize: fontscale(17),
+    fontSize: fontscale(22),
     fontWeight: 'bold',
     color: '#333',
   },
   value: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: '#ff5722',
     fontWeight: 'bold',
   },

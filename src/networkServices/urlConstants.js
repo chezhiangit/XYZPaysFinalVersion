@@ -1,5 +1,5 @@
 export default {
-  BaseUrl: 'http://xyzpaysdevwebapi.azurewebsites.net/',
+  BaseUrl: 'https://xyzpaysdevwebapi.azurewebsites.net/',
   login: 'api/Login/AuthenticateUser',
   dashboard: 'api/Dashboard/GetDasboard?AccessToken=',
   newRegistration: 'api/Registration/NewRegistration',

@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     fontWeight: '500',
   },
   dollar: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(35),
     fontFamily: fontFamily.primaryFontFamily,
     color: 'green',
     fontWeight: '500',
@@ -109,13 +109,13 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   statusLabel: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(35),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.primaryAppColor,
     fontWeight: '500',
   },
   status: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(35),
     fontFamily: fontFamily.primaryFontFamily,
     color: 'green',
     fontWeight: '500',

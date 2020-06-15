@@ -11,6 +11,7 @@ export default StyleSheet.create({
     marginLeft: widthAdapter(40),
     marginRight: widthAdapter(40),
     paddingTop: heightAdapter(50),
+    // marginBottom: heightAdapter(100),
   },
   labelContainer: {
     flexDirection: 'row',
@@ -21,7 +22,7 @@ export default StyleSheet.create({
   providersLabel: {
     fontFamily: fontFamily.primaryFontFamily,
     fontWeight: 'bold',
-    fontSize: fontscale(21),
+    fontSize: fontscale(27),
   },
   interestContainer: {
     width: '100%',

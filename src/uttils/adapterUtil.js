@@ -16,7 +16,12 @@ export function heightAdapter(pt) {
   return (pt / designHeight) * deviceHeight;
 }
 
-export const fontscale = size => size * PixelRatio.getFontScale();
+export const fontscale = size => {
+  console.log('PixelRatio.get() ', PixelRatio.get());
+  const ratio = Platform.OS === 'android' ? 4 : 3;
+  let val = (size/ratio) * PixelRatio.get() // size * PixelRatio.getFontScale();
+  return val;
+};
 
 export function getStatusBarHeight() {
   if (Platform.OS === 'android') {

@@ -15,6 +15,7 @@ import WarningDialog from '../../common/UIComponents/warningDialog';
 import RadioButton from '../../common/UIComponents/RadioButtom/radioButton';
 // import {displayPhoneNumber} from '../../uttils/UtilityFunctions';
 import {sendMobileVerificationCode} from '../../AppStore/forgotPasswordActions';
+import { fontscale } from '../../uttils/adapterUtil';
 
 class ForgotPasswordStep2 extends React.Component {
   constructor(props) {
@@ -107,7 +108,7 @@ class ForgotPasswordStep2 extends React.Component {
           <RadioButton btnName={I18n.t('forgotPassword.recoveryMsg')} />
           <View style={styles.mobileNumberView}>
             <Text style={styles.phoneImage}>
-              <Icon name="phone-square" size={15} color={'gray'} />
+              <Icon name="phone-square" size={fontscale(20)} color={'gray'} />
             </Text>
             {/* <Image style={styles.phoneImage} source={''} /> */}
             <Text style={styles.mobileNumber}>{this.props.mobileNumber}</Text>

@@ -334,7 +334,7 @@ class CommissionPage extends React.Component {
                     <Text style={{alignSelf: 'center'}}>
                       <Icon
                         name="calendar"
-                        size={fontscale(20)}
+                        size={fontscale(25)}
                         color={Colors.primaryAppColor}
                       />
                     </Text>
@@ -344,7 +344,7 @@ class CommissionPage extends React.Component {
                   </View>
                   <View>
                     <Text>
-                      <Icon name="angle-down" size={20} color={'white'} />
+                      <Icon name="angle-down" size={fontscale(25)} color={'white'} />
                     </Text>
                   </View>
                 </View>
@@ -375,7 +375,7 @@ class CommissionPage extends React.Component {
                   <Text>
                     <Icon
                       name="filter"
-                      size={30}
+                      size={fontscale(35)}
                       color={Colors.primaryAppColor}
                     />
                   </Text>

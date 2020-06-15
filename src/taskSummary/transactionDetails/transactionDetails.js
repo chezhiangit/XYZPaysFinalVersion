@@ -80,7 +80,7 @@ class TransactionDetails extends React.Component {
           <View style={styles.dateTimeLeftView}>
             <View style={styles.dateRow}>
               <Text>
-                <Icon name="calendar" size={fontscale(12)} color={'gray'} />
+                <Icon name="calendar" size={fontscale(20)} color={'gray'} />
               </Text>
               <Text style={styles.dateTimeTxt}>
                 {this.props.taskTransactionDetails[0].PaymentDate}
@@ -89,7 +89,7 @@ class TransactionDetails extends React.Component {
             <View style={[styles.dateRow, {marginLeft: widthAdapter(30)}]}>
               {/* <Image style={styles.imageStyle} source={''} /> */}
               <Text>
-                <Icon name="clock-o" size={fontscale(12)} color={'gray'} />
+                <Icon name="clock-o" size={fontscale(20)} color={'gray'} />
               </Text>
               <Text style={styles.dateTimeTxt}>
                 {this.props.taskTransactionDetails[0].PaymentTime}
@@ -106,7 +106,7 @@ class TransactionDetails extends React.Component {
           <Text>
             <Icon
               name="exclamation-circle"
-              size={fontscale(15)}
+              size={fontscale(20)}
               color={'white'}
             />
           </Text>
@@ -208,8 +208,8 @@ class TransactionDetails extends React.Component {
             <View style={styles.logRefresView}>
               <TouchableOpacity
                 onPress={this.onRefreshLog}
-                style={{flexDirection: 'row'}}>
-                <Text>
+                style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+                <Text >
                   <Icon name="history" size={fontscale(20)} color={'gray'} />
                 </Text>
                 <Text style={styles.logTxt}>

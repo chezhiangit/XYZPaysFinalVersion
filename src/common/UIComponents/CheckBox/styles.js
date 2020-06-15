@@ -8,7 +8,7 @@ import fontFamily from '../../../uttils/FontFamily';
 
 const styles = StyleSheet.create({
   btnText: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(25),
     // color: Colors.linkBtnColor,
     fontFamily: fontFamily.primaryFontFamily,
     // height: heightAdapter(60),

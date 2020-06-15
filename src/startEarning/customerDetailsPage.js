@@ -381,11 +381,11 @@ class CustomerDetailsPage extends React.Component {
                 alignItems: 'center',
                 justifyContent: 'flex-start',
               }}>
-              <Text style={{fontSize: fontscale(16)}}>
+              <Text style={{fontSize: fontscale(25)}}>
                 {item.ControlLabel ?? item.HelpText}
               </Text>
               {item.ControlReq && (
-                <Text style={{fontSize: fontscale(12)}}>{'\u2B51'}</Text>
+                <Text style={{fontSize: fontscale(25)}}>{'\u2B51'}</Text>
               )}
             </View>
             <View
@@ -419,7 +419,9 @@ class CustomerDetailsPage extends React.Component {
                 alignItems: 'center',
                 justifyContent: 'flex-start',
               }}>
-              <Text>{item.ControlLabel ?? item.HelpText}</Text>
+              <Text style={{fontSize: fontscale(25)}}>
+                {item.ControlLabel ?? item.HelpText}
+              </Text>
               {item.ControlReq && <Text>{'\u2B51'}</Text>}
             </View>
             <View
@@ -450,7 +452,7 @@ class CustomerDetailsPage extends React.Component {
                 item.ControlLabel ??
                 item.HelpText + (item.ControlReq === false ? '' : '\u2B51')
               }
-              labelFontSize={fontscale(16)}
+              labelFontSize={fontscale(25)}
               // labelTextStyle={{fontSize: fontscale(16), color: 'red'}}
               data={item.dropDownGroup}
               // inputContainerStyle={{width: widthAdapter(700)}}

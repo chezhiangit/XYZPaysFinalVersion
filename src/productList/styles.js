@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.primaryFontFamily,
     color: '#333',
     fontWeight: '700',
-    fontSize: fontscale(20),
+    fontSize: fontscale(25),
   },
   trendingImage: {
     height: heightAdapter(50),
@@ -83,9 +83,9 @@ const styles = StyleSheet.create({
     marginRight: widthAdapter(20),
   },
   btnStyle: {
-    height: heightAdapter(60),
+    height: heightAdapter(70),
     // width: widthAdapter(250),
-    fontSize: fontscale(12),
+    // fontSize: fontscale(30),
     // paddingLeft: widthAdapter(10),
     // paddingRight: widthAdapter(10),
     // borderWidth: 1,
@@ -97,6 +97,9 @@ const styles = StyleSheet.create({
     paddingRight: widthAdapter(15),
     alignItems: 'center',
   },
+  btnTexStyle: {
+    fontSize: fontscale(17),
+  },
   taskInfo: {
     marginLeft: widthAdapter(70),
   },
@@ -107,7 +110,7 @@ const styles = StyleSheet.create({
   },
   taskDescriptionTxt: {
     color: '#737373',
-    fontSize: fontscale(14),
+    fontSize: fontscale(20),
     fontFamily: FontFamily.primaryFontFamily,
   },
   leadCommission: {
@@ -123,7 +126,7 @@ const styles = StyleSheet.create({
   },
   leadCommissionTxt: {
     color: '#737373',
-    fontSize: fontscale(14),
+    fontSize: fontscale(20),
     fontFamily: FontFamily.primaryFontFamily,
   },
   confirmCommission: {
@@ -139,14 +142,14 @@ const styles = StyleSheet.create({
   },
   confirmCommissionTxt: {
     color: '#737373',
-    fontSize: fontscale(14),
+    fontSize: fontscale(25),
     fontFamily: FontFamily.primaryFontFamily,
   },
   referEarnContainer: {
     // height: heightAdapter(350),
     // width: '100%',
     borderColor: '#737373',
-    borderWidth: 0.3,
+    borderWidth: 0.5,
     marginTop: widthAdapter(20),
     marginLeft: widthAdapter(40),
     marginRight: widthAdapter(40),
@@ -164,13 +167,13 @@ const styles = StyleSheet.create({
     paddingBottom: heightAdapter(40),
   },
   titlTextRefer: {
-    fontSize: fontscale(35),
+    fontSize: fontscale(40),
     fontFamily: FontFamily.primaryFontFamily,
     color: 'black',
     fontWeight: 'bold',
   },
   titlTextEarn: {
-    fontSize: fontscale(35),
+    fontSize: fontscale(40),
     fontFamily: FontFamily.primaryFontFamily,
     color: Colors.primaryAppColor,
     fontWeight: 'bold',

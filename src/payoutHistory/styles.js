@@ -42,7 +42,7 @@ export default StyleSheet.create({
   dropdownContainer: {
     // width: '100%',
     // height: heightAdapter(70),
-    borderWidth: 1,
+    // borderWidth: 1,
     borderColor: '#737373',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -70,7 +70,7 @@ export default StyleSheet.create({
     paddingTop: heightAdapter(10),
   },
   selectedValue: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(22),
     fontFamily: fontFamily.primaryFontFamily,
     color: 'white', // '#737373',
     fontWeight: 'bold',
@@ -97,7 +97,7 @@ export default StyleSheet.create({
     backgroundColor: '#f2f2f2',
   },
   segmentItemText: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(22),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#737373',
     fontWeight: 'bold',
@@ -123,14 +123,14 @@ export default StyleSheet.create({
     width: '100%',
   },
   availableAmountTxt: {
-    fontSize: fontscale(24),
+    fontSize: fontscale(30),
     fontFamily: fontFamily.primaryFontFamily,
     color: 'black',
     fontWeight: 'bold',
   },
   notEnoughAmountTxt: {
     fontFamily: fontFamily.primaryFontFamily,
-    fontSize: fontscale(14),
+    fontSize: fontscale(20),
     color: '#a94442',
   },
   payoutList: {
@@ -170,13 +170,13 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   payoutStatusLabel: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: Colors.primaryAppColor,
     fontWeight: 'bold',
     fontFamily: FontFamily.primaryFontFamily,
   },
   payoutStatus: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: '#1b1819',
     fontWeight: 'bold',
     fontFamily: FontFamily.primaryFontFamily,
@@ -192,7 +192,7 @@ export default StyleSheet.create({
   },
   dateTimeTxt: {
     fontFamily: FontFamily.primaryFontFamily,
-    fontSize: fontscale(12),
+    fontSize: fontscale(17),
     color: 'grey',
     fontWeight: 'bold',
     marginLeft: widthAdapter(15),
@@ -222,8 +222,8 @@ export default StyleSheet.create({
     // borderWidth: 1,
     // borderBottomWidth: widthAdapter(5),
     // borderColor: 'red',
-    paddingTop: widthAdapter(50),
-    paddingBottom: widthAdapter(50),
+    paddingTop: widthAdapter(25),
+    paddingBottom: widthAdapter(25),
     // paddingLeft: widthAdapter(10),
     // borderWidth: 1,
     // borderColor: 'red',
@@ -256,11 +256,11 @@ export default StyleSheet.create({
     fontFamily: fontFamily.primaryFontFamily,
     color: '#333',
     fontWeight: '700',
-    fontSize: fontscale(17),
+    fontSize: fontscale(22),
   },
   dotWithTick: {
-    height: widthAdapter(40),
-    width: widthAdapter(40),
+    // height: widthAdapter(40),
+    // width: widthAdapter(40),
     // backgroundColor: Colors.primaryAppColor,
     // borderRadius: 100,
     marginRight: widthAdapter(20),
@@ -278,7 +278,7 @@ export default StyleSheet.create({
     // borderWidth: 1,
   },
   amount: {
-    fontSize: fontscale(14),
+    fontSize: fontscale(20),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.primaryAppColor,
     fontWeight: 'bold',
@@ -295,7 +295,7 @@ export default StyleSheet.create({
     // borderColor: 'red',
   },
   skuLabel: {
-    fontSize: fontscale(14),
+    fontSize: fontscale(20),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#a6a6a6',
     fontWeight: '500',
@@ -318,7 +318,7 @@ export default StyleSheet.create({
     backgroundColor: '#f6f6f6',
   },
   transMessage: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: '#262626',
     fontWeight: 'bold',
   },
@@ -339,12 +339,12 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   payoutItemDetailsTotal: {
-    fontSize: fontscale(20),
+    fontSize: fontscale(25),
     color: '#1b1819',
     fontWeight: 'bold',
   },
   payoutItemDetailsTotalAmount: {
-    fontSize: fontscale(20),
+    fontSize: fontscale(25),
     color: 'white',
     fontWeight: 'bold',
   },

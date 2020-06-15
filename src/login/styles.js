@@ -16,7 +16,7 @@ export default StyleSheet.create({
   },
   loginUserInfo: {
     width: '100%',
-    height: heightAdapter(150),
+    // height: heightAdapter(150),
     alignItems: 'center',
     justifyContent: 'center',
     // borderWidth: 2,

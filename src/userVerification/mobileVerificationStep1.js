@@ -18,6 +18,7 @@ import {
   sendMobileVerificationCode,
   getUserMobileDetails,
 } from '../AppStore/userVerificationActions';
+import { fontscale } from '../uttils/adapterUtil';
 
 class MobileVerificationStep1 extends React.Component {
   constructor(props) {
@@ -105,7 +106,7 @@ class MobileVerificationStep1 extends React.Component {
           {/* <RadioButton btnName={I18n.t('userVerification.recoveryMsg')} /> */}
           <View style={styles.mobileNumberView}>
             <Text style={styles.phoneImage}>
-              <Icon name="phone-square" size={15} color={'gray'} />
+              <Icon name="phone-square" size={fontscale(20)} color={'gray'} />
             </Text>
             <Text style={styles.mobileNumber}>{this.props.mobileNumber}</Text>
           </View>

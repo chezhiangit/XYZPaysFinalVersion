@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   addBtnTextStyle: {
     marginLeft: 0,
     fontWeight: 'bold',
-    fontSize: fontscale(17),
+    fontSize: fontscale(22),
   },
   leadCountBtnRow: {
     marginTop: heightAdapter(50),
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
   },
   rountBtnCaption: {
     color: '#337ab7',
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     fontWeight: 'bold',
   },
   countText: {
-    fontSize: fontscale(25),
+    fontSize: fontscale(30),
     color: 'white',
     fontWeight: 'bold',
   },
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   headerTxt: {
-    fontSize: fontscale(17),
+    fontSize: fontscale(25),
     fontWeight: 'bold',
     color: '#333',
   },
@@ -131,8 +131,8 @@ const styles = StyleSheet.create({
     marginRight: widthAdapter(40),
     marginTop: heightAdapter(40),
     height: heightAdapter(20),
-    borderTopWidth: 0.3,
-    borderBottomWidth: 0.3,
+    borderTopWidth: 0.5,
+    borderBottomWidth: 0.5,
     borderColor: '#a7a7a7',
     backgroundColor: 'rgb(247, 247, 247)',
   },
@@ -177,19 +177,19 @@ const styles = StyleSheet.create({
     backgroundColor: '#f2f2f2',
   },
   transPendinglabel: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(17),
     // fontWeight: 'bold',
     color: '#337ab7',
     backgroundColor: '#f2f2f2',
     // height: heightAdapter(40),
   },
   transLeadLabel: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(17),
     fontWeight: 'bold',
     color: Colors.primaryAppColor,
   },
   tansValue: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(17),
     // fontWeight: 'bold',
     color: '#333',
   },
@@ -212,7 +212,7 @@ const styles = StyleSheet.create({
   },
   dateTimeTxt: {
     fontFamily: fontFamily.primaryFontFamily,
-    fontSize: fontscale(12),
+    fontSize: fontscale(17),
     color: 'grey',
     fontWeight: 'bold',
     marginLeft: widthAdapter(15),
@@ -228,31 +228,34 @@ const styles = StyleSheet.create({
 
   labelContainer: {
     flexDirection: 'row',
+    // borderWidth: 1,
+    // borderColor: 'red',
   },
   label: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(25),
     fontWeight: 'bold',
     color: '#737373',
   },
   value: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(25),
     color: '#31708f',
+    fontWeight: 'bold',
   },
   labelViewStyle: {
     width: widthAdapter(500),
-    // height: heightAdapter(60),
+    height: heightAdapter(60),
     justifyContent: 'center',
   },
   valueViewStyle: {
     width: widthAdapter(175),
     // alignItems: 'flex-end',
     justifyContent: 'center',
-    // height: heightAdapter(60),
+    height: heightAdapter(60),
   },
   btnStyle: {
     height: heightAdapter(60),
     // width: widthAdapter(250),
-    fontSize: fontscale(12),
+    fontSize: fontscale(17),
     // paddingLeft: widthAdapter(20),
     // paddingRight: widthAdapter(20),
     // padding: widthAdapter(30),

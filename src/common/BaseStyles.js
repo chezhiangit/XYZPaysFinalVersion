@@ -28,7 +28,7 @@ export default StyleSheet.create({
     marginTop: heightAdapter(50),
   },
   userInfoTxt: {
-    fontSize: fontscale(24),
+    fontSize: fontscale(30),
     color: Colors.black,
     fontWeight: 'bold',
     fontFamily: fontFamily.primaryFontFamily,

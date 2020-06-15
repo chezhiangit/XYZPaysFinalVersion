@@ -27,7 +27,7 @@ export default StyleSheet.create({
   navItemStyle: {
     padding: widthAdapter(25),
     fontFamily: fontFamily.primaryFontFamily,
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     // color: Colors.white,
   },
   navSectionStyle: {
@@ -55,24 +55,24 @@ export default StyleSheet.create({
   sumenuItemStyle: {
     // padding: widthAdapter(25),
     fontFamily: fontFamily.primaryFontFamily,
-    fontSize: fontscale(15),
-  },
-  sectionHeadingStyle: {
-    paddingVertical: widthAdapter(10),
-    paddingHorizontal: widthAdapter(5),
-    backgroundColor: 'rgb(242,242,242)', // Colors.primaryAppColor,
-    fontFamily: fontFamily.primaryFontFamily,
     fontSize: fontscale(20),
   },
-  footerContainer: {
-    padding: widthAdapter(20),
-    backgroundColor: Colors.linkBtnColor,
-  },
-  sectionLine: {
-    width: '100%',
-    height: heightAdapter(2),
-    backgroundColor: '#22caff',
-  },
+  // sectionHeadingStyle: {
+  //   paddingVertical: widthAdapter(10),
+  //   paddingHorizontal: widthAdapter(5),
+  //   backgroundColor: 'rgb(242,242,242)', // Colors.primaryAppColor,
+  //   fontFamily: fontFamily.primaryFontFamily,
+  //   fontSize: fontscale(20),
+  // },
+  // footerContainer: {
+  //   padding: widthAdapter(20),
+  //   backgroundColor: Colors.linkBtnColor,
+  // },
+  // sectionLine: {
+  //   width: '100%',
+  //   height: heightAdapter(2),
+  //   backgroundColor: '#22caff',
+  // },
   imageView: {
     // paddingBottom: heightAdapter(50),
     // paddingTop: heightAdapter(50),

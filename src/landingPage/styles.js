@@ -34,7 +34,7 @@ export default StyleSheet.create({
     // borderColor: 'blue',
   },
   logedInUserHiText: {
-    fontSize: fontscale(24),
+    fontSize: fontscale(30),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#333',
     fontWeight: 'bold',
@@ -55,7 +55,7 @@ export default StyleSheet.create({
     paddingTop: heightAdapter(10),
   },
   userMessageTxt: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(24),
     color: '#737373',
     // fontWeight: 'bold',
     fontFamily: fontFamily.primaryFontFamily,
@@ -105,9 +105,9 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   bannerViewText: {
-    fontSize: fontscale(25),
+    fontSize: fontscale(30),
     color: 'white',
-    fontFamily: FontFamily.primaryFontFamily,
+    // fontFamily: FontFamily.primaryFontFamily,
     fontWeight: 'bold',
   },
   rightBannerView: {

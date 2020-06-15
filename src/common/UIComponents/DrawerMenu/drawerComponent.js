@@ -25,7 +25,7 @@ import {
 } from '../../../uttils/adapterUtil';
 // import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 
-const iconSize = 15;
+const iconSize = 20;
 
 class DrawerComponent extends Component {
   constructor(props) {
@@ -148,8 +148,8 @@ class DrawerComponent extends Component {
     );
     this.expandedViewHeight =
       index === 0
-        ? heightAdapter(50) + fontscale(20)
-        : heightAdapter(200) + fontscale(4 * 20);
+        ? heightAdapter(50) + fontscale(25)
+        : heightAdapter(200) + fontscale(4 * 25);
 
     if (show && this.state.currentExpandIndex === -1) {
       this.setState(
@@ -199,6 +199,7 @@ class DrawerComponent extends Component {
 
   onCloseMenu = () => {
     console.log('close menu ......');
+    this.props.navigation.dispatch(DrawerActions.toggleDrawer());
   };
 
   render() {
@@ -216,7 +217,7 @@ class DrawerComponent extends Component {
               <View style={styles.blackBadgeClose}>
                 <Text
                   style={{
-                    fontSize: fontscale(15),
+                    fontSize: fontscale(20),
                     color: 'white',
                     fontWeight: 'bold',
                   }}>

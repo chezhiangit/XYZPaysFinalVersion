@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#333333',
   },
   selectedValue: {
-    fontSize: fontscale(20),
+    fontSize: fontscale(22),
     fontFamily: fontFamily.primaryFontFamily,
     color: 'white', //'#737373',
     fontWeight: 'bold',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
   },
   segmentItemText: {
-    fontSize: fontscale(20),
+    fontSize: fontscale(22),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#737373',
     fontWeight: 'bold',
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   childTxt: {
-    fontSize: fontscale(20),
+    fontSize: fontscale(25),
     fontFamily: fontFamily.primaryFontFamily,
     // color: 'green',
     fontWeight: 'bold',
@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
     paddingBottom: heightAdapter(10),
   },
   regStatusText: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: Colors.white,
     fontFamily: fontFamily.primaryFontFamily,
     fontWeight: 'bold',

@@ -14,6 +14,7 @@ import styles from './styles';
 import Colors from '../uttils/Colors';
 import {getProfileInfo, getProviderInfo} from '../AppStore/profileActions';
 import WarningDialog from '../common/UIComponents/warningDialog';
+import {fontscale} from '../uttils/adapterUtil';
 // import CheckBoxComponent from '../common/UIComponents/CheckBox/CheckBox';
 // import {widthAdapter} from '../uttils/adapterUtil';
 // import {displayPhoneNumber} from '../uttils/UtilityFunctions';
@@ -160,7 +161,7 @@ class ProfilePage extends React.Component {
           </Text> */}
           <View style={styles.profileContainer}>
             <Text>
-              <Icon name="edit" size={25} color="#ff5722" />
+              <Icon name="edit" size={fontscale(25)} color="#ff5722" />
             </Text>
             <LinkBtnComponent
               containerStyle={styles.editProfileContainer}

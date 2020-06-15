@@ -52,8 +52,9 @@ import fontFamily from './src/uttils/FontFamily';
 import FontsWeight from './src/uttils/FontsWeight';
 
 import ErrorBoundary from './src/common/UIComponents/ErrorBoundaries/ErrorBoundaries';
-import {Image, StyleSheet} from 'react-native';
+import {Image, StyleSheet, StatusBar} from 'react-native';
 import images from './src/Assets';
+import { heightAdapter } from './src/uttils/adapterUtil';
 
 // import DummyPage from './src/dummypages/testpage1';
 
@@ -260,6 +261,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
           }}>
           <Stack.Screen
@@ -287,6 +290,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
           }}>
           <Stack.Screen
@@ -317,6 +322,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
           }}>
           <Stack.Screen
@@ -344,6 +351,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
           }}>
           <Stack.Screen
@@ -392,6 +401,8 @@ class Main extends React.Component {
             fontWeight: FontsWeight.header,
             color: Colors.primaryFontColor,
             fontFamily: fontFamily.primaryFontFamily,
+            // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+            // paddingBottom: StatusBar.currentHeight,
             // alignSelf: 'center',
           },
         }}>
@@ -429,6 +440,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
             headerBackTitle: 'Home',
           }}
@@ -447,6 +460,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
             headerBackTitle: 'Trending Products',
           }}
@@ -465,6 +480,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
             // headerBackTitle: 'Trending Products',
           }}
@@ -520,6 +537,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
             // headerBackTitle: 'Trending Products',
           }}
@@ -538,6 +557,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
             // headerBackTitle: 'Trending Products',
           }}
@@ -556,6 +577,8 @@ class Main extends React.Component {
               fontWeight: FontsWeight.header,
               color: Colors.primaryFontColor,
               fontFamily: fontFamily.primaryFontFamily,
+              // paddingTop: StatusBar.currentHeight + heightAdapter(20),
+              // paddingBottom: StatusBar.currentHeight,
             },
             // headerBackTitle: 'Trending Products',
           }}
@@ -581,6 +604,8 @@ class Main extends React.Component {
                   fontWeight: FontsWeight.header,
                   color: Colors.primaryFontColor,
                   fontFamily: fontFamily.primaryFontFamily,
+                  // paddingTop: StatusBar.currentHeight + heightAdapter(60),
+                  // paddingBottom: StatusBar.currentHeight + heightAdapter(60),
                 },
               }}>
               <Stack.Screen

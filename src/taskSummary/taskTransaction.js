@@ -136,7 +136,7 @@ class TaskTransactionList extends React.Component {
     return (
       <View style={styles.taskItemContainer}>
         {item?.Lead.map(this.renderTaskItemRow)}
-        <View style={{flexDirection: 'row'}}>
+        <View style={{flexDirection: 'row', marginTop: heightAdapter(20)}}>
           <PrimaryButton
             btnName={item.StepName}
             onSubmit={() => this.onStartLead(item)}
@@ -160,7 +160,7 @@ class TaskTransactionList extends React.Component {
           <Dropdown
             label={'Select'}
             value={this.state.selecteLead}
-            labelFontSize={fontscale(16)}
+            labelFontSize={fontscale(25)}
             // labelTextStyle={{fontSize: fontscale(16), color: 'red'}}
             data={this.props.taskListFilter?.map(this.parseFilterItems)}
             // inputContainerStyle={{width: widthAdapter(700)}}
@@ -247,7 +247,7 @@ class TaskTransactionList extends React.Component {
                 <Text>
                   <Icon
                     name="plus-circle"
-                    size={fontscale(20)}
+                    size={fontscale(25)}
                     color={Colors.linkBtnColor}
                   />
                 </Text>
@@ -261,7 +261,7 @@ class TaskTransactionList extends React.Component {
                   btnTextStyle={{
                     marginLeft: 0,
                     fontWeight: 'bold',
-                    fontSize: fontscale(17),
+                    fontSize: fontscale(25),
                   }}
                 />
               </View>

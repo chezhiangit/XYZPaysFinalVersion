@@ -34,7 +34,7 @@ export default StyleSheet.create({
     // borderColor: 'blue',
   },
   logedInUserHelloText: {
-    fontSize: FontsSize.special,
+    fontSize: fontscale(30),
     fontFamily: fontFamily.primaryFontFamily,
     color: Clors.black,
     fontWeight: FontsWeight.bold,
@@ -80,7 +80,7 @@ export default StyleSheet.create({
     backgroundColor: Clors.deniedAmtBgColor,
   },
   amountText: {
-    fontSize: fontscale(25),
+    fontSize: fontscale(30),
     fontWeight: '500',
   },
   transparentView: {

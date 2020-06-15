@@ -37,13 +37,13 @@ const styles = StyleSheet.create({
   },
   transIdLabel: {
     color: '#777',
-    fontSize: fontscale(18),
+    fontSize: fontscale(25),
     marginRight: widthAdapter(20),
     fontWeight: 'bold',
   },
   transIdTxt: {
     // color: '#777',
-    fontSize: fontscale(21),
+    fontSize: fontscale(27),
     fontWeight: 'bold',
   },
   dateTimeAmountRow: {
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
   },
   dateTimeTxt: {
     fontFamily: fontFamily.primaryFontFamily,
-    fontSize: fontscale(12),
+    fontSize: fontscale(17),
     color: 'grey',
     fontWeight: 'bold',
     marginLeft: widthAdapter(15),
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   amountTxt: {
-    fontSize: fontscale(30),
+    fontSize: fontscale(35),
     color: Colors.primaryAppColor,
     // fontWeight: 'bold',
   },
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     marginTop: heightAdapter(20),
   },
   statusTxt: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: 'white',
   },
   productView: {
@@ -127,11 +127,11 @@ const styles = StyleSheet.create({
     borderBottomColor: '#ddd',
   },
   label: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     fontWeight: 'bold',
   },
   value: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
   },
   logRefresView: {
     flexDirection: 'row',
@@ -143,7 +143,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logTxt: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
   },
   logContainer: {
     flexDirection: 'row',
@@ -162,10 +162,10 @@ const styles = StyleSheet.create({
     width: widthAdapter(687),
   },
   logTitle: {
-    fontSize: fontscale(14),
+    fontSize: fontscale(20),
   },
   logDetails: {
-    fontSize: fontscale(12),
+    fontSize: fontscale(17),
     color: 'rgba(0,0,0,0.5)',
   },
 });

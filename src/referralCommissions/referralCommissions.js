@@ -17,7 +17,7 @@ import moment from 'moment';
 import I18n from '../localization/i18n';
 import Footer from '../common/UIComponents/Footer';
 import NoRecordsFoundView from '../common/UIComponents/NoRecordsFoundView/noRecordsFoundView';
-import {heightAdapter} from '../uttils/adapterUtil';
+import {heightAdapter, fontscale} from '../uttils/adapterUtil';
 import Colors from '../uttils/Colors';
 import WarningDialog from '../common/UIComponents/warningDialog';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
@@ -208,7 +208,7 @@ class ReferralCommissions extends React.Component {
           <View style={styles.customerDetails}>
             {/* <Image source={''} style={styles.emailphoneIcon} /> */}
             <Text style={styles.emailphoneIcon}>
-              <Icon name="envelope" size={15} color={'gray'} />
+              <Icon name="envelope" size={fontscale(20)} color={'gray'} />
             </Text>
             <Text style={styles.customerDetailsLabel}>
               {I18n.t('referralCommissions.email')}
@@ -219,7 +219,7 @@ class ReferralCommissions extends React.Component {
           </View>
           <View style={styles.customerDetails}>
             <Text style={styles.emailphoneIcon}>
-              <Icon name="phone-square" size={15} color={'gray'} />
+              <Icon name="phone-square" size={fontscale(20)} color={'gray'} />
             </Text>
             {/* <Image source={''} style={styles.emailphoneIcon} /> */}
             <Text style={styles.customerDetailsLabel}>
@@ -326,7 +326,7 @@ class ReferralCommissions extends React.Component {
                     <Text style={{alignSelf: 'center'}}>
                       <Icon
                         name="calendar"
-                        size={20}
+                        size={fontscale(25)}
                         color={Colors.primaryAppColor}
                       />
                     </Text>
@@ -336,7 +336,11 @@ class ReferralCommissions extends React.Component {
                   </View>
                   <View>
                     <Text>
-                      <Icon name="angle-down" size={20} color={'white'} />
+                      <Icon
+                        name="angle-down"
+                        size={fontscale(25)}
+                        color={'white'}
+                      />
                     </Text>
                   </View>
                 </View>
@@ -363,15 +367,15 @@ class ReferralCommissions extends React.Component {
             <TouchableWithoutFeedback
               onPress={() => this.toggleFilter(!this.state.showFilter)}>
               <View style={styles.statusFilterContainer}>
-                <View>
-                  <Text>
-                    <Icon
-                      name="filter"
-                      size={30}
-                      color={Colors.primaryAppColor}
-                    />
-                  </Text>
-                </View>
+                {/* <View> */}
+                <Text>
+                  <Icon
+                    name="filter"
+                    size={fontscale(30)}
+                    color={Colors.primaryAppColor}
+                  />
+                </Text>
+                {/* </View> */}
               </View>
             </TouchableWithoutFeedback>
           </View>

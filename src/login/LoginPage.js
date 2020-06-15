@@ -95,6 +95,7 @@ class LoginPage extends React.Component {
   render() {
     // const {navigation} = this.props;
     return (
+      
       <View style={[BaseStyles.baseContainer]}>
         <KeyboardAwareScrollView keyboardShouldPersistTaps="always">
           {/* <Header headerName={I18n.t('login.headerTitle')} /> */}

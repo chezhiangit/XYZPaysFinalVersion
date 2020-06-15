@@ -266,8 +266,9 @@ class FAQ extends React.Component {
 
   renderFaqCard = ({item, index}) => {
     return (
-      <View style={styles.faqItemContainer}>
+      <>
         <TouchableWithoutFeedback
+          style={styles.faqItemContainer}
           onPress={() => {
             this.toggleExpandCollapse(
               !this.state.faqData[item.sectionIndex].data[index].Expanded,
@@ -276,22 +277,25 @@ class FAQ extends React.Component {
             );
             this.expandedViewHeight = item.height + heightAdapter(40);
           }}>
-          <View style={styles.expandCollapseHeader}>
-            <View style={styles.expandCollapseLeftChild}>
-              <Text style={styles.childTxt}>{item.itemTitle}</Text>
-            </View>
-            <View style={styles.expandCollapseRightChild}>
-              {/* <Image source={''} style={styles.dropDownIcon} /> */}
-              <Text>
-                <Icon
-                  name="caret-down"
-                  size={fontscale(20)}
-                  color={Colors.primaryAppColor}
-                />
-              </Text>
+          <View style={styles.faqItemContainer}>
+            <View style={styles.expandCollapseHeader}>
+              <View style={styles.expandCollapseLeftChild}>
+                <Text style={styles.childTxt}>{item.itemTitle}</Text>
+              </View>
+              <View style={styles.expandCollapseRightChild}>
+                {/* <Image source={''} style={styles.dropDownIcon} /> */}
+                <Text>
+                  <Icon
+                    name="caret-down"
+                    size={fontscale(25)}
+                    color={Colors.primaryAppColor}
+                  />
+                </Text>
+              </View>
             </View>
           </View>
         </TouchableWithoutFeedback>
+
         <Animated.View
           style={[
             styles.faqDetailsContainer,
@@ -317,7 +321,7 @@ class FAQ extends React.Component {
           </View>
           <View style={[BaseStyles.emptyHView, {height: heightAdapter(30)}]} />
         </Animated.View>
-      </View>
+      </>
     );
   };
 

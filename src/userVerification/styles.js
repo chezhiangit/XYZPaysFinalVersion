@@ -25,7 +25,7 @@ export default StyleSheet.create({
     // marginTop: heightAdapter(30),
   },
   userInfoTxt: {
-    fontSize: fontscale(24),
+    fontSize: fontscale(30),
     color: Clors.black,
     fontWeight: 'bold',
     fontFamily: fontFamily.primaryFontFamily,
@@ -40,7 +40,7 @@ export default StyleSheet.create({
     // marginTop: heightAdapter(30),
   },
   userInfoStep: {
-    fontSize: fontscale(17),
+    fontSize: fontscale(22),
     color: Clors.black,
     // fontWeight: 'bold',
     fontFamily: fontFamily.primaryFontFamily,
@@ -61,7 +61,7 @@ export default StyleSheet.create({
   },
   forgotPwdUserStep1Txt: {
     // height: heightAdapter(50),
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: Colors.black,
     // fontWeight: '500',
     // lineHeight: widthAdapter(1),
@@ -82,7 +82,7 @@ export default StyleSheet.create({
     // borderWidth: 1,
   },
   mobileNumber: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     // color: Colors.linkBtnColor,
     fontFamily: fontFamily.primaryFontFamily,
     height: heightAdapter(50),

@@ -27,13 +27,13 @@ export default StyleSheet.create({
   mainContainer: {
     height: heightAdapter(200),
     borderColor: '#ccc',
-    borderWidth: 0.3,
+    borderWidth: 0.5,
     marginTop: widthAdapter(30),
     alignItems: 'center',
     justifyContent: 'center',
   },
   noRecordsTxt: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: '#262626',
     fontWeight: 'bold',
   },

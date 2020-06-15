@@ -210,7 +210,7 @@ class PayoutHistory extends React.Component {
                 <Text>
                   <Icon
                     name="check-circle"
-                    size={fontscale(20)}
+                    size={fontscale(30)}
                     color={Colors.primaryAppColor}
                   />
                 </Text>
@@ -288,14 +288,14 @@ class PayoutHistory extends React.Component {
                 <View style={styles.dateRow}>
                   {/* <Image style={styles.imageStyle} source={''} /> */}
                   <Text>
-                    <Icon name="calendar" size={fontscale(12)} color={'gray'} />
+                    <Icon name="calendar" size={fontscale(20)} color={'gray'} />
                   </Text>
                   <Text style={styles.dateTimeTxt}>{item.PayoutDate}</Text>
                 </View>
                 <View style={[styles.dateRow, {marginLeft: widthAdapter(30)}]}>
                   {/* <Image style={styles.imageStyle} source={''} /> */}
                   <Text>
-                    <Icon name="clock-o" size={fontscale(12)} color={'gray'} />
+                    <Icon name="clock-o" size={fontscale(20)} color={'gray'} />
                   </Text>
                   <Text style={styles.dateTimeTxt}>{item.PayoutTime}</Text>
                 </View>
@@ -435,10 +435,10 @@ class PayoutHistory extends React.Component {
               <View style={styles.selectionBox}>
                 {/* <Image style={styles.image} source={''} /> */}
                 <View style={{flexDirection: 'row'}}>
-                  <Text>
+                  <Text style={{alignSelf: 'center'}}>
                     <Icon
                       name="calendar"
-                      size={fontscale(20)}
+                      size={fontscale(30)}
                       color={Colors.primaryAppColor}
                     />
                   </Text>
@@ -447,8 +447,8 @@ class PayoutHistory extends React.Component {
                   </Text>
                 </View>
                 <View>
-                  <Text>
-                    <Icon name="angle-down" size={20} color={'white'} />
+                  <Text style={{alignSelf: 'center'}}>
+                    <Icon name="angle-down" size={fontscale(30)} color={'white'} />
                   </Text>
                 </View>
               </View>

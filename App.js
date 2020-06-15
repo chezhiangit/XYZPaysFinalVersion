@@ -9,6 +9,7 @@ import Main from './Main';
 import {Provider} from 'react-redux';
 import {configureStore} from './src/AppStore/ConfigureStore';
 import SplashScreen from 'react-native-splash-screen';
+// import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 const store = configureStore();
 
@@ -18,9 +19,11 @@ const App: () => React$Node = () => {
     SplashScreen.hide();
   }, []);
   return (
-    <Provider store={store}>
-      <Main />
-    </Provider>
+    // <SafeAreaProvider>
+      <Provider store={store}>
+        <Main />
+      </Provider>
+    // </SafeAreaProvider>
   );
 };
 

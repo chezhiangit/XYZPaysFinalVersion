@@ -60,11 +60,11 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.primaryFontFamily,
     color: '#333',
     fontWeight: '700',
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(25),
   },
   dotWithTick: {
-    height: widthAdapter(40),
-    width: widthAdapter(40),
+    // height: widthAdapter(40),
+    // width: widthAdapter(40),
     // backgroundColor: Colors.primaryAppColor,
     // borderRadius: 100,
     marginRight: widthAdapter(20),
@@ -80,31 +80,31 @@ const styles = StyleSheet.create({
     marginBottom: heightAdapter(20),
   },
   amountLabel: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(25),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.black,
     fontWeight: '500',
   },
   dollar: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(25),
     fontFamily: fontFamily.primaryFontFamily,
     color: 'green',
     fontWeight: '500',
   },
   amount: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(25),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.primaryAppColor,
     fontWeight: '500',
   },
   statusLabel: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(25),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.primaryAppColor,
     fontWeight: '500',
   },
   status: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(25),
     fontFamily: fontFamily.primaryFontFamily,
     color: 'green',
     fontWeight: '500',
@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     marginBottom: heightAdapter(20),
   },
   trendingSalesLabel: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(25),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.black,
     fontWeight: '500',
@@ -146,13 +146,13 @@ const styles = StyleSheet.create({
   },
   productNameLabel: {
     fontFamily: fontFamily.primaryFontFamily,
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: '#737373',
     // lineHeight: 1,
   },
   productName: {
     fontFamily: fontFamily.primaryFontFamily,
-    fontSize: fontscale(25),
+    fontSize: fontscale(30),
     // color: '#737373',
   },
   amountContainer: {
@@ -163,12 +163,12 @@ const styles = StyleSheet.create({
   },
   commissionAmountLabel: {
     fontFamily: fontFamily.primaryFontFamily,
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     color: '#737373',
     // lineHeight: 1,
   },
   commissionAmount: {
-    fontSize: fontscale(21),
+    fontSize: fontscale(27),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.primaryAppColor,
     fontWeight: '500',
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
   imageContainer: {
     flexDirection: 'row',
     borderColor: '#ccc',
-    borderWidth: 0.3,
+    borderWidth: 0.5,
     justifyContent: 'center',
     padding: widthAdapter(20),
   },
@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
   },
   addWishListBtnText: {
     color: '#333',
-    fontSize: fontscale(13),
+    fontSize: fontscale(17),
     fontFamily: fontFamily.primaryFontFamily,
     marginLeft: widthAdapter(10),
     marginRight: widthAdapter(10),
@@ -219,17 +219,17 @@ const styles = StyleSheet.create({
     paddingRight: widthAdapter(20),
   },
   label: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(22),
     fontWeight: 'bold',
     fontFamily: fontFamily.primaryFontFamily,
   },
   value: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(22),
     fontFamily: fontFamily.primaryFontFamily,
   },
   productInfoContainer: {
     borderColor: '#ccc',
-    borderWidth: 0.3,
+    borderWidth: 0.5,
   },
 });
 

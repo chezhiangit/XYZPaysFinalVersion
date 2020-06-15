@@ -295,7 +295,7 @@ class MyReferrals extends React.Component {
               <Text>
                 <Icon
                   name="caret-down"
-                  size={20}
+                  size={fontscale(30)}
                   color={Colors.primaryAppColor}
                 />
               </Text>
@@ -397,7 +397,7 @@ class MyReferrals extends React.Component {
                 <Text>
                   <Icon
                     name="angle-down"
-                    size={fontscale(20)}
+                    size={fontscale(30)}
                     color={'white'}
                   />
                 </Text>

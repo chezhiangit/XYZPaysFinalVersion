@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {widthAdapter, heightAdapter} from '../uttils/adapterUtil';
+import {widthAdapter, heightAdapter, fontscale} from '../uttils/adapterUtil';
 import Colors from '../uttils/Colors';
 import fontFamily from '../uttils/FontFamily';
 
@@ -54,11 +54,11 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.primaryFontFamily,
     color: '#333',
     fontWeight: '700',
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(35),
   },
   dotWithTick: {
-    height: widthAdapter(40),
-    width: widthAdapter(40),
+    height: fontscale(40),
+    width: fontscale(40),
     // backgroundColor: Colors.primaryAppColor,
     // borderRadius: 100,
     marginRight: widthAdapter(10),
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
   },
   statusTxt: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(35),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.white,
     fontWeight: '500',
@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
     // backgroundColor: 'green',
   },
   skuLabel: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(35),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#606060',
     fontWeight: 'bold',
   },
   skuTxt: {
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(35),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#606060',
     fontWeight: 'bold',
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     fontFamily: fontFamily.primaryFontFamily,
     color: '#333',
     fontWeight: '700',
-    fontSize: widthAdapter(35),
+    fontSize: fontscale(35),
   },
   dot: {
     width: widthAdapter(25),
@@ -132,7 +132,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   selectionTxt: {
-    fontSize: widthAdapter(25),
+    fontSize: fontscale(25),
     fontFamily: fontFamily.primaryFontFamily,
     color: '#737373',
   },

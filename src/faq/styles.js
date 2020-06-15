@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     paddingBottom: widthAdapter(30),
     paddingTop: widthAdapter(30),
     marginTop: heightAdapter(20),
-    marginBottom: heightAdapter(20),
+    // marginBottom: heightAdapter(20),
     justifyContent: 'flex-start',
     width: '100%',
     borderRadius: widthAdapter(4),
@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingLeft: widthAdapter(20),
     paddingRight: widthAdapter(20),
+    // borderColor: 'red',
+    // borderWidth: 1,
   },
   expandCollapseLeftChild: {
     alignItems: 'flex-start',
@@ -37,7 +39,7 @@ const styles = StyleSheet.create({
     width: widthAdapter(600),
   },
   childTxt: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(25),
     fontFamily: fontFamily.primaryFontFamily,
     fontWeight: 'bold',
   },
@@ -76,11 +78,11 @@ const styles = StyleSheet.create({
   faqDetailsTxt: {
     fontFamily: fontFamily.primaryFontFamily,
     color: '#333',
-    fontSize: fontscale(20),
+    fontSize: fontscale(25),
     textAlign: 'justify',
   },
   sectionTitle: {
-    fontSize: fontscale(25),
+    fontSize: fontscale(30),
     fontWeight: 'bold',
     fontFamily: fontFamily.primaryFontFamily,
     fontStyle: 'italic',

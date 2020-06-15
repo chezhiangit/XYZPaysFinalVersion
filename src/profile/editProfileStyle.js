@@ -13,7 +13,7 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   choosePhoto: {
-    fontSize: fontscale(20),
+    fontSize: fontscale(24),
     fontFamily: fontFamily.primaryFontFamily,
     color: Colors.primaryAppColor,
     fontWeight: 'bold',

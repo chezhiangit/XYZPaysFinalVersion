@@ -66,7 +66,7 @@ export default class warningDialog extends Component {
               <Text style={styles.warningImage}>
                 <Icon
                   name="info-circle"
-                  size={fontscale(50)}
+                  size={fontscale(60)}
                   color={Colors.primaryAppColor}
                 />
               </Text>
@@ -123,7 +123,7 @@ const styles = StyleSheet.create({
   },
   WarningText: {
     // fontFamily: 'Roboto-Regular',
-    fontSize: fontscale(20),
+    fontSize: fontscale(25),
     // lineHeight: adapter(24),
     // textAlign: 'center',
     color: 'rgb(66,66,66)',
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   cancelButtonText: {
     color: 'rgb(66,66,66)', //'rgb(0,113,233)',
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     // fontFamily: 'Roboto-Medium',
     textAlign: 'center',
     // lineHeight: adapter(24),
@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
   },
   doneText: {
     color: 'rgb(255,255,255)',
-    fontSize: fontscale(15),
+    fontSize: fontscale(20),
     fontFamily: FontFamily.primaryFontFamily,
     textAlign: 'center',
     fontWeight: 'bold',

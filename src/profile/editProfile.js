@@ -35,6 +35,7 @@ import WarningDialog from '../common/UIComponents/warningDialog';
 // import {displayPhoneNumber} from '../uttils/UtilityFunctions';
 import SliderView from '../common/UIComponents/SliderView';
 import {heightAdapter} from '../uttils/adapterUtil';
+import {fontscale} from '../uttils/adapterUtil';
 
 let ImagePicker = NativeModules.ImageCropPicker;
 
@@ -391,7 +392,7 @@ class EditProfilePage extends React.Component {
             btnName={el.ProviderName}
             onClick={() => this.onCheckBoxSelected(index)}
             isSelected={this.state.checkBoxesStatus[index]}
-            btnTextStyle={{fontWeight: 'bold'}}
+            btnTextStyle={{fontWeight: 'bold', fontSize: fontscale(25)}}
             imageUrl={el.ProviderIconImage}
           />
         </View>
@@ -539,7 +540,7 @@ class EditProfilePage extends React.Component {
           <View style={editStyles.sliderContainer}>
             <View style={editStyles.sliderBtnContainer}>
               <Text>
-                <Icon name="camera" size={25} color="black" />
+                <Icon name="camera" size={fontscale(25)} color="black" />
               </Text>
               <PrimaryButton
                 btnStyle={editStyles.sliderBtnStyle}
@@ -553,7 +554,7 @@ class EditProfilePage extends React.Component {
             />
             <View style={editStyles.sliderBtnContainer}>
               <Text>
-                <Icon name="image" size={25} color="black" />
+                <Icon name="image" size={fontscale(25)} color="black" />
               </Text>
               <PrimaryButton
                 btnStyle={editStyles.sliderBtnStyle}
@@ -567,7 +568,7 @@ class EditProfilePage extends React.Component {
             />
             <View style={editStyles.sliderBtnContainer}>
               <Text>
-                <Icon name="window-close" size={25} color="black" />
+                <Icon name="window-close" size={fontscale(25)} color="black" />
               </Text>
               <PrimaryButton
                 btnStyle={editStyles.sliderBtnStyle}

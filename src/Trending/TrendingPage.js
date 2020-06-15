@@ -112,7 +112,7 @@ class TrendingPage extends React.Component {
                 <Text>
                   <Icon
                     name="check-circle"
-                    size={fontscale(20)}
+                    size={fontscale(30)}
                     color={Colors.primaryAppColor}
                   />
                 </Text>
@@ -140,7 +140,7 @@ class TrendingPage extends React.Component {
               <Text style={styles.trendingSalesLabel}>
                 {I18n.t('trending.sales')}{' '}
               </Text>
-              <Text style={styles.trendingSalesCount}>{item.Trending}</Text>
+              <Text style={styles.trendingSalesLabel}>{item.Trending}</Text>
             </View>
           </View>
           <View style={styles.trendingImageContainer}>

@@ -4,7 +4,7 @@ export default {
   detailsScreen: 'Details Screen',
   mapView: 'Map View',
   login: {
-    userInfo: 'Sign in with your existing account',
+    userInfo: 'Enter Credentials to login to your XYZPays Account',
     headerTitle: 'Login',
     emailPlaceHolder: 'Enter email',
     passwordPlaceHolder: 'Enter password',
@@ -197,7 +197,7 @@ export default {
   payoutHistory: {
     headerTitle: 'Payout History',
     userInfo: 'Transfer Money & Payout History',
-    transferBtnName: 'Transfer to you Paypal Account',
+    transferBtnName: 'Transfer to your Paypal Account',
     emailId: 'Your Paypal email Id: ',
     payoutStatus: 'Payout Status:',
     notEnoughAmountTxt:

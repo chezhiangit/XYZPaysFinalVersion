@@ -42,7 +42,7 @@ export default StyleSheet.create({
     justifyContent: 'flex-end',
   },
   editProfileContainer: {
-    width: widthAdapter(200),
+    // width: widthAdapter(200),
     // marginTop: heightAdapter(30),
     alignItems: 'flex-end',
     justifyContent: 'center',
@@ -70,11 +70,12 @@ export default StyleSheet.create({
   providersLabel: {
     fontFamily: fontFamily.primaryFontFamily,
     fontWeight: 'bold',
-    fontSize: fontscale(21),
+    fontSize: fontscale(32),
   },
   accountInforLabel: {
     fontFamily: fontFamily.primaryFontFamily,
     fontWeight: 'bold',
+    fontSize: fontscale(35),
   },
   viewStyle: {
     width: '50%',
@@ -85,11 +86,11 @@ export default StyleSheet.create({
     // alignItems: 'flex-start',
   },
   label: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(22),
     fontWeight: 'bold',
   },
   value: {
-    fontSize: fontscale(15),
+    fontSize: fontscale(22),
   },
   activeStatus: {
     backgroundColor: '#5bc0de',
@@ -97,7 +98,7 @@ export default StyleSheet.create({
     borderRadius: widthAdapter(10),
     borderColor: '#5bc0de',
     borderWidth: 1,
-    fontSize: fontscale(12),
+    fontSize: fontscale(22),
     color: 'white',
     fontWeight: 'bold',
   },

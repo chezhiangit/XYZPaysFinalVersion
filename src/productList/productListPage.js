@@ -87,7 +87,7 @@ class ProductsListPage extends React.Component {
 
   renderCommission = (el, index) => (
     <View style={styles.leadCommission}>
-      <Text>{`$${el?.CommissionRate} `}</Text>
+      <Text style={styles.leadCommissionTxt}>{`$${el?.CommissionRate} `}</Text>
       <Text style={styles.leadCommissionTxt}>for each {el.StepName}</Text>
     </View>
   );
@@ -125,7 +125,7 @@ class ProductsListPage extends React.Component {
               )
             }
             btnStyle={styles.btnStyle}
-            btnTexStyle={{fontSize: fontscale(13)}}
+            btnTexStyle={{fontSize: fontscale(17)}}
           />
         </View>
         <View style={styles.taskInfo}>
@@ -186,6 +186,7 @@ class ProductsListPage extends React.Component {
                   btnName={I18n.t('productsList.referBtnName')}
                   onSubmit={this.onStartReferring}
                   btnStyle={styles.btnStyle}
+                  btnTexStyle={styles.btnTexStyle}
                 />
               </View>
             </ScrollView>

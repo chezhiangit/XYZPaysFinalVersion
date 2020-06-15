@@ -192,13 +192,13 @@ class TaskSummaryPage extends React.Component {
             <View style={styles.payoutLeftView}>
               <View style={styles.dateRow}>
                 <Text>
-                  <Icon name="calendar" size={fontscale(12)} color={'gray'} />
+                  <Icon name="calendar" size={fontscale(20)} color={'gray'} />
                 </Text>
                 <Text style={styles.dateTimeTxt}>{item.TxnDate}</Text>
               </View>
               <View style={[styles.dateRow, {marginLeft: widthAdapter(30)}]}>
                 <Text>
-                  <Icon name="clock-o" size={fontscale(12)} color={'gray'} />
+                  <Icon name="clock-o" size={fontscale(20)} color={'gray'} />
                 </Text>
                 <Text style={styles.dateTimeTxt}>{item.TxnTime}</Text>
               </View>
@@ -226,7 +226,7 @@ class TaskSummaryPage extends React.Component {
                   <Text>
                     <Icon
                       name="plus-circle"
-                      size={fontscale(20)}
+                      size={fontscale(25)}
                       color={Colors.linkBtnColor}
                     />
                   </Text>
